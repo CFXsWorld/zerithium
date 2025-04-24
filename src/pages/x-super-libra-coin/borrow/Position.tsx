@@ -32,13 +32,13 @@ const Position = ({
   const { t } = useTranslate();
   const options = [
     {
-      label: t('x-lending.borrow.mode.high.title'),
-      description: t('x-lending.borrow.mode.high.description'),
+      label: t('lending.borrow.mode.high.title'),
+      description: t('lending.borrow.mode.high.description'),
       value: BorrowModeType.HighLiquidity,
     },
     {
-      label: t('x-lending.borrow.mode.risk.title'),
-      description: t('x-lending.borrow.mode.risk.description'),
+      label: t('lending.borrow.mode.risk.title'),
+      description: t('lending.borrow.mode.risk.description'),
       value: BorrowModeType.RiskIsolation,
     },
   ];
@@ -97,7 +97,7 @@ const Position = ({
                   setBorrowOpen(true);
                 }}
               >
-                {t('x-lending.borrow')}
+                {t('lending.borrow')}
               </Button>
               <Button
                 type="primary"
@@ -106,7 +106,7 @@ const Position = ({
                 disabled={!userBorrowedAmount}
                 onClick={() => setRepayOpen(true)}
               >
-                {t('x-lending.repay')}
+                {t('lending.repay')}
               </Button>
             </div>
           </div>
@@ -144,7 +144,7 @@ const Position = ({
             </div>
             <div className="flex flex-col max-md:gap-[10px] max-md:py-[16px]">
               <span className="flex h-[52px] items-center text-tc-secondary max-md:h-[auto] max-md:items-start">
-                {t('x-lending.health.factor')}
+                {t('lending.health.factor')}
               </span>
               <div className="flex items-center gap-[10px] text-[16px]">
                 <HealthFactor value={`${healthFactor}`} />
@@ -155,20 +155,20 @@ const Position = ({
                   size="small"
                   onClick={() => setRiskOpen(true)}
                 >
-                  {t('x-lending.health.risk.detail')}
+                  {t('lending.health.risk.detail')}
                 </Button>
               </div>
             </div>
             <div className="flex flex-col max-md:gap-[10px] max-md:py-[16px]">
               <span className="flex h-[52px] items-center justify-end text-tc-secondary max-md:h-[auto] max-md:justify-start">
-                {t('x-lending.borrow.mode')}
+                {t('lending.borrow.mode')}
               </span>
               <div className="flex items-center gap-[10px] text-[16px]">
                 <BorrowMode
                   onSuccess={refresh}
                   contact={{ ...ZERITHIUM_SLC_CONTRACT.interface }}
                   options={options}
-                  description={t('x-lending.borrow.mode.slc.description')}
+                  description={t('lending.borrow.mode.slc.description')}
                 />
               </div>
             </div>

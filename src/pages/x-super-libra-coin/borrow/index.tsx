@@ -36,7 +36,7 @@ const Borrow = () => {
             name: 'Borrow',
             path: '/x-super-libra-coin/borrow',
             icon: <BorrowIcon />,
-            label: t('x-lending.borrow'),
+            label: t('lending.borrow'),
           },
         ]}
         active="Borrow"

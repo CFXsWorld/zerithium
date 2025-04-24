@@ -5,7 +5,7 @@ import SwapInfo from '@/pages/x-libra-usd/mint/SwapInfo.tsx';
 import WithAuthButton from '@/components/Wallet/WithAuthButton.tsx';
 import { Button } from 'antd';
 import useWalletAuth from '@/components/Wallet/useWalletAuth.ts';
-import useApprove from '@/pages/x-dex/hooks/useApprove.ts';
+import useApprove from '@/pages/dex/hooks/useApprove.ts';
 import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { Address } from 'viem';
 import { useTranslate } from '@/i18n';
@@ -47,7 +47,7 @@ function MintSLC() {
     if (!inputToken?.address) {
       return (
         <Button className="w-full" type="primary" size="large" disabled>
-          {t('x-dex.swap.token.modal.title')}
+          {t('dex.swap.token.modal.title')}
         </Button>
       );
     }
@@ -101,7 +101,7 @@ function MintSLC() {
         <div className="mt-[20px]">
           <TokenInput
             editable
-            title={t('x-dex.swap.input.pay')}
+            title={t('dex.swap.input.pay')}
             token={inputToken}
             onTokenChange={setInputToken}
             amount={payAmount}
@@ -120,7 +120,7 @@ function MintSLC() {
             </div>
           </div>
           <TokenInput
-            title={t('x-dex.swap.input.receive')}
+            title={t('dex.swap.input.receive')}
             editable={false}
             token={outputToken}
             onTokenChange={() => {}}

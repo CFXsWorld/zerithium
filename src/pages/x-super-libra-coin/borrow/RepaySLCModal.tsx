@@ -2,7 +2,7 @@ import { Button, Checkbox, Modal } from 'antd';
 import TokenInput from '@/components/TokenInput.tsx';
 import { CheckCircleOutlined } from '@ant-design/icons';
 import WithAuthButton from '@/components/Wallet/WithAuthButton.tsx';
-import useApprove from '@/pages/x-dex/hooks/useApprove.ts';
+import useApprove from '@/pages/dex/hooks/useApprove.ts';
 import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { Address } from 'viem';
 import Warning from '@/components/Warning.tsx';
@@ -59,7 +59,7 @@ const RepaySLCModal = ({
     if (isInsufficient) {
       return (
         <Button className="w-full" type="primary" size="large" disabled>
-          {t('x-lending.supply.available.amount', {
+          {t('lending.supply.available.amount', {
             amount: `${formatNumber(Number(availableAmount || 0), 6)}`,
           })}
         </Button>
@@ -76,7 +76,7 @@ const RepaySLCModal = ({
           loading={isTokenAApproving}
           onClick={approveTokenA}
         >
-          {t('x-dex.swap.give.permission', { name: 'xUSD' })}
+          {t('dex.swap.give.permission', { name: 'xUSD' })}
         </Button>
       );
     }
@@ -89,7 +89,7 @@ const RepaySLCModal = ({
         onClick={onConfirm}
         loading={isSubmittedLoading || loading}
       >
-        {t('x-lending.repay.to', { name: 'xUSD' })}
+        {t('lending.repay.to', { name: 'xUSD' })}
       </Button>
     );
   };
@@ -97,7 +97,7 @@ const RepaySLCModal = ({
     <Modal
       open={open}
       onCancel={onClose}
-      title={t('x-lending.repay.to', { name: 'xUSD' })}
+      title={t('lending.repay.to', { name: 'xUSD' })}
       footer={null}
       centered
       maskClosable={false}
@@ -117,7 +117,7 @@ const RepaySLCModal = ({
           {!isRepayAll ? (
             <TokenInput
               editable
-              title={t('x-lending.borrow.input.amount')}
+              title={t('lending.borrow.input.amount')}
               token={inputToken}
               onTokenChange={() => {}}
               amount={payAmount}
@@ -125,13 +125,13 @@ const RepaySLCModal = ({
               disabled
               ownerAmount={formatNumber(availableAmount || 0, 6)}
               totalPrice={inputTokenTotalPrice}
-              amountLabel={t('x-lending.available')}
+              amountLabel={t('lending.available')}
               showDropArrow={false}
             />
           ) : (
             <div className="h-[124px] rounded-[8px] bg-background-primary p-[16px]">
               <div className="text-[14px] text-tc-secondary">
-                {t('x-lending.borrow.input.amount')}
+                {t('lending.borrow.input.amount')}
               </div>
 
               <div className="flex h-[48px] justify-around py-[5px]">
@@ -164,7 +164,7 @@ const RepaySLCModal = ({
         <div className="flex flex-col gap-[5px] p-[16px]">
           <div className="flex-center-between">
             <span className="text-tc-secondary">
-              {t('x-lending.repay.remaining.debt')}
+              {t('lending.repay.remaining.debt')}
             </span>
             <div className="flex-center flex gap-[10px]">
               <span>{formatCurrency(availableAmount, false)} xUSD</span>
@@ -181,7 +181,7 @@ const RepaySLCModal = ({
           </div>
           <div className="flex items-start justify-between">
             <span className="text-tc-secondary">
-              {t('x-lending.health.factor')}
+              {t('lending.health.factor')}
             </span>
             <div className="flex flex-col items-end justify-end gap-[10px]">
               <div className="flex-center gap-[10px]">
@@ -192,13 +192,13 @@ const RepaySLCModal = ({
                 />
               </div>
               <div className="text-[12px] text-tc-secondary">
-                <span>{`${t('x-lending.borrow.mode.high.health')} < 1.0`}</span>
+                <span>{`${t('lending.borrow.mode.high.health')} < 1.0`}</span>
               </div>
             </div>
           </div>
         </div>
         <div>
-          <Warning>{t('x-lending.repay.detail')}</Warning>
+          <Warning>{t('lending.repay.detail')}</Warning>
         </div>
         <div className="mt-[20px] h-[56px]  w-full">
           <WithAuthButton>{renderSwapText()}</WithAuthButton>

@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Token } from '@/types/swap.ts';
 import useErc20Balance, { formatNumber } from '@/hooks/useErc20Balance.ts';
-import usePair from '@/pages/x-dex/hooks/usePair.ts';
+import usePair from '@/pages/dex/hooks/usePair.ts';
 import {
   SLCToken,
   ZERITHIUM_SLC_CONTRACT,
   ZERITHIUM_SWAP_CONTRACT,
 } from '@/contracts';
-import useLP from '@/pages/x-dex/hooks/useLP.ts';
+import useLP from '@/pages/dex/hooks/useLP.ts';
 import { isNumeric } from '@/utils/isNumeric.ts';
 import useXWriteContract from '@/hooks/useXWriteContract.ts';
 import { Address, erc20Abi } from 'viem';

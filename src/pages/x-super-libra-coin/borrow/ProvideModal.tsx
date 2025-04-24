@@ -3,7 +3,7 @@ import TokenInput from '@/components/TokenInput.tsx';
 import WithAuthButton from '@/components/Wallet/WithAuthButton.tsx';
 import { SLCAsset } from '@/types/slc.ts';
 import useProvide from '@/pages/x-super-libra-coin/hooks/useProvide.ts';
-import useApprove from '@/pages/x-dex/hooks/useApprove.ts';
+import useApprove from '@/pages/dex/hooks/useApprove.ts';
 import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { Address } from 'viem';
 import useNativeToken from '@/hooks/useNativeToken.ts';
@@ -64,7 +64,7 @@ const ProvideModal = ({
           loading={isTokenAApproving}
           onClick={approveTokenA}
         >
-          {t('x-dex.swap.give.permission', { name: `${inputToken?.symbol}` })}
+          {t('dex.swap.give.permission', { name: `${inputToken?.symbol}` })}
         </Button>
       );
     }
@@ -94,7 +94,7 @@ const ProvideModal = ({
         <div className="mt-[20px]">
           <TokenInput
             editable
-            title={t('x-lending.borrow.input.amount')}
+            title={t('lending.borrow.input.amount')}
             token={inputToken}
             onTokenChange={() => {}}
             amount={payAmount}

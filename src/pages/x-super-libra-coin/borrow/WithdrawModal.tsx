@@ -51,7 +51,7 @@ const WithdrawModal = ({
         onClick={withdraw}
         loading={isSubmittedLoading || loading}
       >
-        {t('x-lending.withdraw.to', { name: `${asset?.symbol}` })}
+        {t('lending.withdraw.to', { name: `${asset?.symbol}` })}
       </Button>
     );
   };
@@ -59,7 +59,7 @@ const WithdrawModal = ({
     <Modal
       open={open}
       onCancel={onClose}
-      title={t('x-lending.withdraw.to', { name: `${asset?.symbol}` })}
+      title={t('lending.withdraw.to', { name: `${asset?.symbol}` })}
       footer={null}
       centered
       maskClosable={false}
@@ -68,7 +68,7 @@ const WithdrawModal = ({
         <div className="mt-[20px]">
           <TokenInput
             editable
-            title={t('x-lending.borrow.input.amount')}
+            title={t('lending.borrow.input.amount')}
             token={inputToken}
             onTokenChange={() => {}}
             amount={payAmount}
@@ -83,7 +83,7 @@ const WithdrawModal = ({
         <div className="flex flex-col gap-[10px] p-[16px]">
           <div className="flex-center-between">
             <span className="text-tc-secondary">
-              {t('x-lending.withdraw.remaining.provided')}
+              {t('lending.withdraw.remaining.provided')}
             </span>
             <span>
               {remainingProvided} {asset?.symbol}
@@ -91,7 +91,7 @@ const WithdrawModal = ({
           </div>
           <div className="flex items-start justify-between">
             <span className="text-tc-secondary">
-              {t('x-lending.health.factor')}
+              {t('lending.health.factor')}
             </span>
             <div className="flex flex-col items-end justify-end gap-[10px]">
               <div className="flex-center gap-[10px]">
@@ -102,13 +102,13 @@ const WithdrawModal = ({
                 />
               </div>
               <div className="text-[12px] text-tc-secondary">
-                <span>{`${t('x-lending.borrow.mode.high.health')} < 1.0`}</span>
+                <span>{`${t('lending.borrow.mode.high.health')} < 1.0`}</span>
               </div>
             </div>
           </div>
         </div>
         <div>
-          <Warning>{t('x-lending.withdraw.detail')}</Warning>
+          <Warning>{t('lending.withdraw.detail')}</Warning>
         </div>
         <div className="mt-[20px] h-[56px]  w-full">
           <WithAuthButton>{renderSwapText()}</WithAuthButton>

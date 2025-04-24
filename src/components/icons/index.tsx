@@ -2,9 +2,9 @@
 import { cn } from '@/utils/classnames.ts';
 import { CSSProperties, HTMLAttributes, PropsWithChildren } from 'react';
 import AntdIcon from '@ant-design/icons';
-import LogoSvg from '@/assets/svgs/external/logo.svg?react';
+// import LogoSvg from '@/assets/svgs/external/logo.svg?react';
 import LogoLight from '@/assets/images/logo-light.png';
-import LogoDark from '@/assets/images/logo-dark.png';
+// import LogoDark from '@/assets/images/logo-dark.png';
 
 import CreatePool from '@/assets/svgs/other/create-pool.svg?react';
 import Pools from '@/assets/svgs/other/pools.svg?react';

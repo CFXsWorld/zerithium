@@ -31,7 +31,7 @@ const Collateral = ({ refresh }: { refresh: () => void }) => {
       },
     },
     {
-      title: t('x-lending.wallet.balance'),
+      title: t('lending.wallet.balance'),
       dataIndex: 'balance',
       width: 240,
       render: (_: string, record: SLCAsset) => {
@@ -57,7 +57,7 @@ const Collateral = ({ refresh }: { refresh: () => void }) => {
       },
     },
     {
-      title: t('x-lending.market.detail.supply.max.ltv'),
+      title: t('lending.market.detail.supply.max.ltv'),
       dataIndex: 'max_ltv',
       width: 240,
       render: (value: string) => {
@@ -65,7 +65,7 @@ const Collateral = ({ refresh }: { refresh: () => void }) => {
       },
     },
     {
-      title: t('x-lending.market.detail.supply.liquidation.penalty'),
+      title: t('lending.market.detail.supply.liquidation.penalty'),
       dataIndex: 'liq_penalty',
       width: 240,
       render: (value: string) => {
@@ -73,7 +73,7 @@ const Collateral = ({ refresh }: { refresh: () => void }) => {
       },
     },
     {
-      title: t('x-lending.market.detail.supply.max.amount'),
+      title: t('lending.market.detail.supply.max.amount'),
       dataIndex: 'max_deposit_amount',
       align: 'center',
       render: (value: string) => {
@@ -106,7 +106,7 @@ const Collateral = ({ refresh }: { refresh: () => void }) => {
                 setWithdrawItem(record);
               }}
             >
-              {t('x-lending.withdraw')}
+              {t('lending.withdraw')}
             </ResponsiveButton>
             <ResponsiveButton
               disabled={!record.canBeProvided}
@@ -131,7 +131,7 @@ const Collateral = ({ refresh }: { refresh: () => void }) => {
         <div className="flex flex-col">
           <div className="flex h-[64px] items-center justify-between border-2 border-solid  border-transparent border-b-line-primary px-[24px]">
             <div className="flex-center gap-[30px]">
-              <span className="font-[500]">{t('x-lending.collateral')}</span>
+              <span className="font-[500]">{t('lending.collateral')}</span>
             </div>
           </div>
           <WithdrawModal

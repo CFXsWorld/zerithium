@@ -1,6 +1,6 @@
 import { JsonRpcProvider } from 'ethers';
 import { CHAINS } from '@/contracts/chains.tsx';
-import useEnv from './useEnv';
+// import useEnv from './useEnv';
 
 // TODO CHANGE CHAIN
 const useProvider = () => {
