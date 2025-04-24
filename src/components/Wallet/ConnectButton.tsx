@@ -43,7 +43,7 @@ const ConnectButton = () => {
 
   return (
     <div
-      className="flex h-[40px] cursor-pointer items-center justify-center rounded-[16px] bg-theme-non-opaque px-[16px] text-theme"
+      className="flex h-[40px] cursor-pointer items-center justify-center rounded-[16px] border border-theme bg-theme-non-opaque px-[16px] text-theme"
       onClick={() => {
         onOpen(true);
       }}

@@ -110,7 +110,7 @@ const TokenSelector = ({
           setOpen(false);
         }}
         width={500}
-        title={t('x-dex.swap.token.modal.title')}
+        title={t('dex.swap.token.modal.title')}
         footer={null}
       >
         <ModalContent
@@ -140,7 +140,7 @@ const TokenSelector = ({
             <span className="text-[14px]">{value?.symbol}</span>
           </div>
         ) : (
-          <span className="text-[14px]">{t('x-dex.swap.token.select')}</span>
+          <span className="text-[14px]">{t('dex.swap.token.select')}</span>
         )}
 
         {showDropArrow && <DownOutlined className="text-[14px]" />}

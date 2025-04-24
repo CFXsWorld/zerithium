@@ -1,6 +1,6 @@
 import { useAccount, useReadContract } from 'wagmi';
 import { Address } from 'viem';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { useMemo, useState } from 'react';
 import { formatUnits } from 'ethers';
 
@@ -12,8 +12,8 @@ const useBorrow = () => {
     isLoading: isOverviewLoading,
     refetch: refresh1,
   } = useReadContract({
-    address: XUNION_SLC_CONTRACT.interface.address as Address,
-    abi: XUNION_SLC_CONTRACT.interface.abi,
+    address: ZERITHIUM_SLC_CONTRACT.interface.address as Address,
+    abi: ZERITHIUM_SLC_CONTRACT.interface.abi,
     functionName: 'licensedAssetOverview',
   });
   const {
@@ -21,8 +21,8 @@ const useBorrow = () => {
     isLoading: isHealthLoading,
     refetch: refresh2,
   } = useReadContract({
-    address: XUNION_SLC_CONTRACT.interface.address as Address,
-    abi: XUNION_SLC_CONTRACT.interface.abi,
+    address: ZERITHIUM_SLC_CONTRACT.interface.address as Address,
+    abi: ZERITHIUM_SLC_CONTRACT.interface.abi,
     functionName: 'viewUsersHealthFactor',
     args: [address!],
     query: {

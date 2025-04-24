@@ -39,7 +39,7 @@ const TokenInput = ({
   loading?: boolean;
 }) => {
   const { t } = useTranslate();
-  const label = amountLabel || t('x-dex.swap.token.balance');
+  const label = amountLabel || t('dex.swap.token.balance');
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     let value = event.target.value;
     value = value.replace(/[^0-9.]/g, '');
@@ -98,7 +98,7 @@ const TokenInput = ({
                     onMax(ownerAmount);
                   }}
                 >
-                  {t('x-dex.swap.token.select.max')}
+                  {t('dex.swap.token.select.max')}
                 </div>
               )}
             </>

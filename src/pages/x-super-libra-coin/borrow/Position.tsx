@@ -7,7 +7,7 @@ import RepaySLCModal from '@/pages/x-super-libra-coin/borrow/RepaySLCModal.tsx';
 import RiskModal from '@/components/Borrow/RiskModal.tsx';
 import BorrowMode from '@/components/Borrow/BorrowMode.tsx';
 import HealthFactor from '@/components/Borrow/HealthFactor.tsx';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { BorrowModeType } from '@/types/slc.ts';
 import { cn } from '@/utils/classnames.ts';
 import { useTranslate } from '@/i18n';
@@ -58,8 +58,8 @@ const Position = ({
             onClose={() => setRiskOpen(false)}
             userHealthFactor={healthFactor}
             contact={{
-              abi: XUNION_SLC_CONTRACT.interface.abi,
-              address: XUNION_SLC_CONTRACT.interface.address,
+              abi: ZERITHIUM_SLC_CONTRACT.interface.abi,
+              address: ZERITHIUM_SLC_CONTRACT.interface.address,
             }}
           />
           <BorrowSLCModal
@@ -166,7 +166,7 @@ const Position = ({
               <div className="flex items-center gap-[10px] text-[16px]">
                 <BorrowMode
                   onSuccess={refresh}
-                  contact={{ ...XUNION_SLC_CONTRACT.interface }}
+                  contact={{ ...ZERITHIUM_SLC_CONTRACT.interface }}
                   options={options}
                   description={t('x-lending.borrow.mode.slc.description')}
                 />

@@ -8,7 +8,7 @@ import WithAuthButton from '@/components/Wallet/WithAuthButton.tsx';
 import { Button } from 'antd';
 import useWalletAuth from '@/components/Wallet/useWalletAuth.ts';
 import useApprove from '@/pages/x-dex/hooks/useApprove.ts';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { Address } from 'viem';
 import useNativeToken from '@/hooks/useNativeToken.ts';
 import useBurnSLC from '@/pages/x-super-libra-coin/hooks/useBurnSLC.ts';
@@ -44,7 +44,7 @@ function BurnSLC() {
   } = useApprove({
     token: inputToken!,
     amount: payAmount,
-    spenderAddress: XUNION_SLC_CONTRACT.interface.address as Address,
+    spenderAddress: ZERITHIUM_SLC_CONTRACT.interface.address as Address,
   });
 
   const { isNativeToken } = useNativeToken();

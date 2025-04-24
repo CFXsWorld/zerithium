@@ -3,46 +3,46 @@
 /* base colors */
 @layer base {
   :root {
-    --xunion-color-theme: #6e5de6;
-    --xunion-color-theme-non-opaque: #e2dffa;
-    --xunion-color-theme-light: #6e5de6;
+    --zerithium-color-theme: #000;
+    --zerithium-color-theme-non-opaque: #fff;
+    --zerithium-color-theme-light: #000;
 
-    --xunion-color-info: #007aff;
-    --xunion-color-info-non-opaque: rgba(0, 122, 255, 0.12);
-    --xunion-color-warning: rgba(254, 192, 29);
-    --xunion-color-warning-non-opaque: rgba(254, 192, 29, 0.2);
-    --xunion-color-error: #e0382d;
-    --xunion-color-error-non-opaque: rgba(224, 56, 45, 0.08);
-    --xunion-color-success: #33b84e;
+    --zerithium-color-info: #007aff;
+    --zerithium-color-info-non-opaque: rgba(0, 122, 255, 0.12);
+    --zerithium-color-warning: rgba(254, 192, 29);
+    --zerithium-color-warning-non-opaque: rgba(254, 192, 29, 0.2);
+    --zerithium-color-error: #e0382d;
+    --zerithium-color-error-non-opaque: rgba(224, 56, 45, 0.08);
+    --zerithium-color-success: #33b84e;
 
-    --xunion-bg-primary: #f5f7fd;
-    --xunion-bg-secondary: #1a1a1a;
-    --xunion-bg-e-primary: #f1f2f6;
-    --xunion-bg-e-secondary: #7e7e7e;
+    --zerithium-bg-primary: #fff;
+    --zerithium-bg-secondary: #1a1a1a;
+    --zerithium-bg-e-primary: #f1f2f6;
+    --zerithium-bg-e-secondary: #7e7e7e;
 
-    --xunion-fill-primary: #f5f7fd;
-    --xunion-fill-e-primary: #e5e7ed;
-    --xunion-fill-secondary: #f1f2f6;
-    --xunion-fill-e-secondary: #f9f9f9;
-    --xunion-fill-niubi: #fff;
-    --xunion-fill-niubi2: rgba(245, 247, 253, 1);
-    --xunion-fill-niubi3: rgba(245, 247, 253, 1);
-    --xunion-fill-niubi4: #fff;
+    --zerithium-fill-primary: #f5f7fd;
+    --zerithium-fill-e-primary: #e5e7ed;
+    --zerithium-fill-secondary: #f1f2f6;
+    --zerithium-fill-e-secondary: #f9f9f9;
+    --zerithium-fill-niubi: rgb(228, 228, 231, 0.4);
+    --zerithium-fill-niubi2: rgb(228, 228, 231, 0.6);
+    --zerithium-fill-niubi3: rgb(228, 228, 231, 0.8);
+    --zerithium-fill-niubi4: #fff;
 
-    --xunion-separator-opaque: #f3f3f5;
-    --xunion-separator-non-opaque: rgba(126, 126, 143, 0.12);
-    --xunion-tabindex: #4d4d66;
+    --zerithium-separator-opaque: #f3f3f5;
+    --zerithium-separator-non-opaque: rgba(126, 126, 143, 0.12);
+    --zerithium-tabindex: #4d4d66;
 
-    --xunion-overlay: rgba(0, 0, 0, 0.4);
-    --xunion-toast: rgba(62, 62, 82, 0.92);
+    --zerithium-overlay: rgba(0, 0, 0, 0.4);
+    --zerithium-toast: rgba(62, 62, 82, 0.92);
 
-    --xunion-tc-primary: #17191f;
-    --xunion-tc-secondary: #7e7e7e;
-    --xunion-tc-tertiary: #a3abc2;
-    --xunion-tc-theme: #eb54e6;
-    --xunion-tc-on-button: #ffffff;
-    --xunion-line-primary: #e5e7ed;
-    --xunion-line-primary2: #ffffff;
+    --zerithium-tc-primary: #17191f;
+    --zerithium-tc-secondary: #7e7e7e;
+    --zerithium-tc-tertiary: #a3abc2;
+    --zerithium-tc-theme: #eb54e6;
+    --zerithium-tc-on-button: #ffffff;
+    --zerithium-line-primary: #e5e7ed;
+    --zerithium-line-primary2: #ffffff;
 
 
     --background: 0 0% 100%;
@@ -69,46 +69,46 @@
   }
 
   [data-theme='dark'] {
-    --xunion-color-theme: #6e5de6;
-    --xunion-color-theme-non-opaque: rgba(110, 93, 230, 0.2);
-    --xunion-color-theme-light: #ff5bfa;
+    --zerithium-color-theme: #fff;
+    --zerithium-color-theme-non-opaque: rgba(0, 0, 0, 0.2);
+    --zerithium-color-theme-light: #fff;
 
-    --xunion-color-info: #0a84ff;
-    --xunion-color-info-non-opaque: rgba(10, 132, 255, 0.12);
-    --xunion-color-warning: rgba(254, 192, 29);
-    --xunion-color-warning-non-opaque: rgba(254, 192, 29, 0.2);
-    --xunion-color-error: #f54f45;
-    --xunion-color-error-non-opaque: rgba(245, 79, 69, 0.08);
-    --xunion-color-success: #39cc56;
+    --zerithium-color-info: #0a84ff;
+    --zerithium-color-info-non-opaque: rgba(10, 132, 255, 0.12);
+    --zerithium-color-warning: rgba(254, 192, 29);
+    --zerithium-color-warning-non-opaque: rgba(254, 192, 29, 0.2);
+    --zerithium-color-error: #f54f45;
+    --zerithium-color-error-non-opaque: rgba(245, 79, 69, 0.08);
+    --zerithium-color-success: #39cc56;
 
-    --xunion-bg-primary: #131313;
-    --xunion-bg-secondary: #ffffff;
-    --xunion-bg-e-primary: #2c2c2c;
-    --xunion-bg-e-secondary: #7e7e7e;
+    --zerithium-bg-primary: #131313;
+    --zerithium-bg-secondary: #ffffff;
+    --zerithium-bg-e-primary: #2c2c2c;
+    --zerithium-bg-e-secondary: #7e7e7e;
 
-    --xunion-fill-primary: #7e7e7e;
-    --xunion-fill-e-primary: #2c2c2c;
-    --xunion-fill-secondary: #2c2c2c;
-    --xunion-fill-e-secondary: #131313;
-    --xunion-fill-niubi: #1a1a1a;
-    --xunion-fill-niubi2: rgba(10, 10, 10, 1);
-    --xunion-fill-niubi3: rgba(44, 44, 44, 1);
-    --xunion-fill-niubi4: rgba(44, 44, 44, 1);
+    --zerithium-fill-primary: #7e7e7e;
+    --zerithium-fill-e-primary: #2c2c2c;
+    --zerithium-fill-secondary: #2c2c2c;
+    --zerithium-fill-e-secondary: #131313;
+    --zerithium-fill-niubi: #1a1a1a;
+    --zerithium-fill-niubi2: rgba(10, 10, 10, 1);
+    --zerithium-fill-niubi3: rgba(44, 44, 44, 1);
+    --zerithium-fill-niubi4: rgba(44, 44, 44, 1);
 
-    --xunion-separator-opaque: #2a2a3d;
-    --xunion-separator-non-opaque: rgba(126, 126, 143, 0.24);
-    --xunion-tabindex: #4d4d66;
+    --zerithium-separator-opaque: #2a2a3d;
+    --zerithium-separator-non-opaque: rgba(126, 126, 143, 0.24);
+    --zerithium-tabindex: #4d4d66;
 
-    --xunion-overlay: rgba(0, 0, 0, 0.6);
-    --xunion-toast: rgba(62, 62, 82, 0.92);
+    --zerithium-overlay: rgba(0, 0, 0, 0.6);
+    --zerithium-toast: rgba(62, 62, 82, 0.92);
 
-    --xunion-tc-primary: #ffffff;
-    --xunion-tc-secondary: #898da3;
-    --xunion-tc-tertiary: #676a7a;
-    --xunion-tc-theme: #eb54e6;
-    --xunion-tc-on-button: #ffffff;
-    --xunion-line-primary: rgba(44, 44, 44, 1);
-    --xunion-line-primary2: #1a1a1a;
+    --zerithium-tc-primary: #ffffff;
+    --zerithium-tc-secondary: #898da3;
+    --zerithium-tc-tertiary: #676a7a;
+    --zerithium-tc-theme: #eb54e6;
+    --zerithium-tc-on-button: #ffffff;
+    --zerithium-line-primary: rgba(44, 44, 44, 1);
+    --zerithium-line-primary2: #1a1a1a;
 
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -136,27 +136,27 @@
 /* base sizes */
 @layer base {
   :root {
-    --xunion-sapcing-sm: 0.25rem;
-    --xunion-sapcing-md: 0.5rem;
-    --xunion-sapcing-lg: 0.75rem;
-    --xunion-sapcing-xl: 1rem;
-    --xunion-sapcing-2xl: 1.5rem;
+    --zerithium-sapcing-sm: 0.25rem;
+    --zerithium-sapcing-md: 0.5rem;
+    --zerithium-sapcing-lg: 0.75rem;
+    --zerithium-sapcing-xl: 1rem;
+    --zerithium-sapcing-2xl: 1.5rem;
 
-    --xunion-radius-sm: 0.25rem;
-    --xunion-radius-md: 0.5rem;
-    --xunion-radius-lg: 0.75rem;
-    --xunion-radius-xl: 1rem;
-    --xunion-radius-2xl: 1.5rem;
-    --xunion-radius-full: 50%;
+    --zerithium-radius-sm: 0.25rem;
+    --zerithium-radius-md: 0.5rem;
+    --zerithium-radius-lg: 0.75rem;
+    --zerithium-radius-xl: 1rem;
+    --zerithium-radius-2xl: 1.5rem;
+    --zerithium-radius-full: 50%;
 
-    --xunion-shadow-sm: 0px 2px 0px 0px rgba(55, 59, 82, 0.04);
-    --xunion-shadow-md: 0 0 2px 0 rgba(55, 59, 82, 0.04),
+    --zerithium-shadow-sm: 0px 2px 0px 0px rgba(55, 59, 82, 0.04);
+    --zerithium-shadow-md: 0 0 2px 0 rgba(55, 59, 82, 0.04),
       0 2px 16px 0 rgba(55, 59, 82, 0.08);
-    --xunion-shadow-lg: 0 0 2px 0 rgba(55, 59, 82, 0.04),
+    --zerithium-shadow-lg: 0 0 2px 0 rgba(55, 59, 82, 0.04),
       0 4px 24px 0 rgba(55, 59, 82, 0.12);
-    --xunion-shadow-xl: 0 1 2px 0 rgba(55, 59, 82, 0.8),
+    --zerithium-shadow-xl: 0 1 2px 0 rgba(55, 59, 82, 0.8),
       0 8px 24px 0 rgba(55, 59, 82, 0.16);
-    --xunion-shadow-xxl: 0px 8px 32px 0px rgba(55, 59, 82, 0.24),
+    --zerithium-shadow-xxl: 0px 8px 32px 0px rgba(55, 59, 82, 0.24),
       0px 1px 2px 0px rgba(55, 59, 82, 0.08);
   }
 }

@@ -72,7 +72,7 @@ const TokenGroupSelector = ({
                   }}
                 >
                   <span className="text-tc-secondary">
-                    {t('x-lending.borrow.mode.homogenous.group')} {index + 1}
+                    {t('lending.borrow.mode.homogenous.group')} {index + 1}
                   </span>
                   {renderGroupAsset(item)}
                 </div>
@@ -91,7 +91,7 @@ const TokenGroupSelector = ({
         }}
       >
         <div className="flex items-center text-[14px] text-tc-secondary">
-          {t('x-lending.borrow.mode.homogenous.input.label')}
+          {t('lending.borrow.mode.homogenous.input.label')}
         </div>
         <div className="flex-center gap-[5px]">
           {value?.length ? (
@@ -100,7 +100,7 @@ const TokenGroupSelector = ({
             </div>
           ) : (
             <span className="text-[16px]">
-              {t('x-lending.borrow.mode.homogenous.input.select')}
+              {t('lending.borrow.mode.homogenous.input.select')}
             </span>
           )}
           <DownOutlined className="text-[14px]" />

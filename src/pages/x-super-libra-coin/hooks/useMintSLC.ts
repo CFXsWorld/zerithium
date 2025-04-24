@@ -4,8 +4,8 @@ import useErc20Balance, { formatNumber } from '@/hooks/useErc20Balance.ts';
 import usePair from '@/pages/x-dex/hooks/usePair.ts';
 import {
   SLCToken,
-  XUNION_SLC_CONTRACT,
-  XUNION_SWAP_CONTRACT,
+  ZERITHIUM_SLC_CONTRACT,
+  ZERITHIUM_SWAP_CONTRACT,
 } from '@/contracts';
 import useLP from '@/pages/x-dex/hooks/useLP.ts';
 import { isNumeric } from '@/utils/isNumeric.ts';
@@ -39,12 +39,12 @@ const useMintSLC = () => {
 
   const { pairAddress: fromWithSLCPairAddress } = usePair({
     fromToken: inputToken,
-    toToken: { address: XUNION_SWAP_CONTRACT.slc.address },
+    toToken: { address: ZERITHIUM_SWAP_CONTRACT.slc.address },
   });
 
   const { pairAddress: toWithSLCPairAddress } = usePair({
     fromToken: outputToken,
-    toToken: { address: XUNION_SWAP_CONTRACT.slc.address },
+    toToken: { address: ZERITHIUM_SWAP_CONTRACT.slc.address },
   });
 
   const { getLpPrice } = useLP();
@@ -169,7 +169,7 @@ const useMintSLC = () => {
   const onConfirm = () => {
     if (decimals && payAmount && inputToken) {
       const amountIn = parseUnits(payAmount, decimals);
-      const { address, abi } = XUNION_SLC_CONTRACT.interface;
+      const { address, abi } = ZERITHIUM_SLC_CONTRACT.interface;
       if (isNativeToken(inputToken)) {
         writeContractAsync({
           address: address as Address,

@@ -47,7 +47,6 @@ const ConnectModal = () => {
                 }),
               }).then(() => {
                 onOpen(false);
-                updateWallet('fluent');
               });
             }}
           >
@@ -60,11 +59,10 @@ const ConnectModal = () => {
             onClick={() => {
               connectAsync({
                 connector: coinbaseWallet({
-                  appName: 'x-union',
+                  appName: 'Zerithium',
                 }),
               }).then(() => {
                 onOpen(false);
-                updateWallet('fluent');
               });
             }}
           >
@@ -77,7 +75,6 @@ const ConnectModal = () => {
             onClick={() => {
               connectAsync({ connector: injected() }).then(() => {
                 onOpen(false);
-                updateWallet('fluent');
               });
             }}
           >

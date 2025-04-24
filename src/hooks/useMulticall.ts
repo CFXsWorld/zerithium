@@ -1,5 +1,5 @@
 import { Contract, InterfaceAbi } from 'ethers';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import useProvider from '@/hooks/useProvider.ts';
 
 export interface ContractCall {
@@ -10,7 +10,7 @@ export interface ContractCall {
 }
 
 const useMulticall = () => {
-  const { address, abi } = XUNION_SLC_CONTRACT.mutilCall;
+  const { address, abi } = ZERITHIUM_SLC_CONTRACT.mutilCall;
 
   const provider = useProvider();
 

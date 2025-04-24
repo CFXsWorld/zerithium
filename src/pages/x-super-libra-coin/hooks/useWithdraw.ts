@@ -1,5 +1,5 @@
 import useXWriteContract from '@/hooks/useXWriteContract.ts';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { Address, erc20Abi } from 'viem';
 import { SLCAsset } from '@/types/slc.ts';
 import useNativeToken from '@/hooks/useNativeToken.ts';
@@ -39,8 +39,8 @@ const useWithdraw = ({
   );
 
   const { data: health } = useReadContract({
-    address: XUNION_SLC_CONTRACT.interface.address as Address,
-    abi: XUNION_SLC_CONTRACT.interface.abi,
+    address: ZERITHIUM_SLC_CONTRACT.interface.address as Address,
+    abi: ZERITHIUM_SLC_CONTRACT.interface.abi,
     functionName: 'viewUsersHealthFactor',
     args: [address!],
     query: {
@@ -87,7 +87,7 @@ const useWithdraw = ({
     if (decimals) {
       const amountIn = parseUnits(payAmount, decimals);
 
-      const { address, abi } = XUNION_SLC_CONTRACT.interface;
+      const { address, abi } = ZERITHIUM_SLC_CONTRACT.interface;
       writeContractAsync({
         address: address as Address,
         abi,
@@ -99,7 +99,7 @@ const useWithdraw = ({
 
   const withdrawCFX = async () => {
     if (decimals) {
-      const { address, abi } = XUNION_SLC_CONTRACT.interface;
+      const { address, abi } = ZERITHIUM_SLC_CONTRACT.interface;
       const amountIn = parseUnits(payAmount, decimals);
       writeContractAsync({
         address: address as Address,

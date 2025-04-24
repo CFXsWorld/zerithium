@@ -34,7 +34,7 @@ export const usePersistStore = create<CommonState>()(
         }),
     })),
     {
-      name: 'xunion-storage',
+      name: 'zerithium-storage',
     }
   )
 );

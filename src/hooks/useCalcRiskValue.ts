@@ -2,14 +2,14 @@ import { useReadContract } from 'wagmi';
 
 import { Address } from 'viem';
 
-import { SLCToken, XUNION_LENDING_CONTRACT } from '@/contracts';
+import { SLCToken, ZERITHIUM_LENDING_CONTRACT } from '@/contracts';
 import { useMemo } from 'react';
 import { BorrowModeType } from '@/types/slc';
 
 const useCalcRiskValue = (address: Address, mode: BorrowModeType) => {
   const { data: assetsBaseInfo } = useReadContract({
-    address: XUNION_LENDING_CONTRACT.interface.address,
-    abi: XUNION_LENDING_CONTRACT.interface.abi,
+    address: ZERITHIUM_LENDING_CONTRACT.interface.address,
+    abi: ZERITHIUM_LENDING_CONTRACT.interface.abi,
     functionName: 'assetsBaseInfo',
     args: [address!],
     query: {
@@ -18,8 +18,8 @@ const useCalcRiskValue = (address: Address, mode: BorrowModeType) => {
   });
 
   const { data: riskIsolationModeLendingNetAmount } = useReadContract({
-    address: XUNION_LENDING_CONTRACT.interface.address,
-    abi: XUNION_LENDING_CONTRACT.interface.abi,
+    address: ZERITHIUM_LENDING_CONTRACT.interface.address,
+    abi: ZERITHIUM_LENDING_CONTRACT.interface.abi,
     functionName: 'riskIsolationModeLendingNetAmount',
     args: [SLCToken.address],
     query: {

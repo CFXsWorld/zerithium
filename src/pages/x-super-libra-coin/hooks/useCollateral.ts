@@ -7,7 +7,7 @@ import { getTokenList } from '@/services/slc.ts';
 import { formatUnits } from 'ethers';
 import { BorrowModeType, SLCAsset } from '@/types/slc.ts';
 import { formatNumber } from '@/hooks/useErc20Balance.ts';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import useNativeToken from '@/hooks/useNativeToken.ts';
 
 const useCollateral = () => {
@@ -20,8 +20,8 @@ const useCollateral = () => {
   const { getRealAddress, isNativeToken, getNativeTokenBalance } =
     useNativeToken();
   const { data: assetsOverview } = useReadContract({
-    address: XUNION_SLC_CONTRACT.interface.address as Address,
-    abi: XUNION_SLC_CONTRACT.interface.abi,
+    address: ZERITHIUM_SLC_CONTRACT.interface.address as Address,
+    abi: ZERITHIUM_SLC_CONTRACT.interface.abi,
     functionName: 'userAssetOverview',
     args: [address!],
     query: {
@@ -30,8 +30,8 @@ const useCollateral = () => {
   });
 
   const { data: userMode } = useReadContract({
-    address: XUNION_SLC_CONTRACT.interface.address as Address,
-    abi: XUNION_SLC_CONTRACT.interface.abi,
+    address: ZERITHIUM_SLC_CONTRACT.interface.address as Address,
+    abi: ZERITHIUM_SLC_CONTRACT.interface.abi,
     functionName: 'userMode',
     args: [address!],
     query: {
@@ -54,8 +54,8 @@ const useCollateral = () => {
       const tokens = (assetsOverview as string[][])[0];
       const calls: ContractCall[] = tokens.map((address) => ({
         name: 'getPrice',
-        abi: XUNION_SLC_CONTRACT.oracle.abi,
-        address: XUNION_SLC_CONTRACT.oracle.address as Address,
+        abi: ZERITHIUM_SLC_CONTRACT.oracle.abi,
+        address: ZERITHIUM_SLC_CONTRACT.oracle.address as Address,
         values: [address],
       }));
       multiCall(calls).then((allUnitPrice) => {

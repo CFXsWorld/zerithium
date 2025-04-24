@@ -6,7 +6,7 @@ import { formatUnits } from 'ethers';
 import { formatNumber } from '@/hooks/useErc20Balance.ts';
 
 const useNativeToken = () => {
-  const { chainId = 1_030, address } = useAccount();
+  const { chainId = 1600, address } = useAccount();
 
   const provider = useProvider();
   const getNativeTokenERC20Address = (token: Token) => {

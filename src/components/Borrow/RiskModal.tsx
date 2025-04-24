@@ -21,10 +21,10 @@ const HealthFactorInfo = ({
   const { t } = useTranslate();
   return (
     <div className="flex  flex-col gap-[8px] rounded-[8px] border border-line-primary p-[12px]">
-      <div className="text-[16px]">{t('x-lending.health.factor')}</div>
+      <div className="text-[16px]">{t('lending.health.factor')}</div>
       <div className="flex flex-col">
         <div className="text-[14px] text-tc-secondary">
-          {t('x-lending.health.factor.detail')}
+          {t('lending.health.factor.detail')}
         </div>
 
         <div className="relative mt-[20px] h-[70px] py-[10px]">
@@ -40,7 +40,7 @@ const HealthFactorInfo = ({
                 transform: 'translateX(15%)',
               }}
             >
-              <span className="pr-[3px]">{`${t('x-lending.health.your')}:`}</span>
+              <span className="pr-[3px]">{`${t('lending.health.your')}:`}</span>
               <HealthFactor
                 value={formatNumber(userHealthFactor || 0, 2).toString()}
               />
@@ -83,7 +83,7 @@ const HealthFactorInfo = ({
           ))}
         </div>
         <p className="text-left  text-status-error">
-          {t('x-lending.health.liquidation.value')}: 1.0
+          {t('lending.health.liquidation.value')}: 1.0
         </p>
       </div>
     </div>
@@ -102,10 +102,10 @@ const CurrentLTV = ({
   const { t } = useTranslate();
   return (
     <div className="flex  flex-col gap-[8px] rounded-[8px] border border-line-primary p-[12px]">
-      <div className="text-[16px]">{t('x-lending.health.LTV')}</div>
+      <div className="text-[16px]">{t('lending.health.LTV')}</div>
       <div className="flex flex-col">
         <div className="text-[14px] text-tc-secondary">
-          {t('x-lending.health.LTV.detail')}
+          {t('lending.health.LTV.detail')}
         </div>
 
         <div className="relative mt-[30px] h-[70px] py-[10px]">
@@ -122,7 +122,7 @@ const CurrentLTV = ({
                   transform: 'translateX(-10%)',
                 }}
               >
-                {`${t('x-lending.health.your')}: ${formatNumber(userValueUsedRatio || 0, 2)}`}
+                {`${t('lending.health.your')}: ${formatNumber(userValueUsedRatio || 0, 2)}`}
               </span>
               <span className="text-tc-secondary">
                 <CaretDownOutlined />
@@ -152,7 +152,7 @@ const CurrentLTV = ({
                   transform: 'translateX(-20%)',
                 }}
               >
-                {`${t('x-dex.swap.token.select.max')}: ${formatNumber(userMaxUsedRatio || 0, 2) || t('x-lending.health.fine')}`}
+                {`${t('dex.swap.token.select.max')}: ${formatNumber(userMaxUsedRatio || 0, 2) || t('lending.health.fine')}`}
               </span>
             </div>
           </div>
@@ -176,7 +176,7 @@ const CurrentLTV = ({
           </div>
         </div>
         <p className="text-left  text-status-error">
-          {t('x-lending.health.liquidation.threshold')}:
+          {t('lending.health.liquidation.threshold')}:
           {` ${tokenLiquidateRatio}`}
         </p>
       </div>
@@ -239,13 +239,13 @@ const RiskModal = ({
     <Modal
       open={open}
       onCancel={onClose}
-      title={t('x-lending.health.risk.title')}
+      title={t('lending.health.risk.title')}
       footer={null}
       centered
     >
       <div className="flex flex-col gap-[20px]">
         <div className="mt-[20px]">
-          <p>{t('x-lending.health.risk.description')}</p>
+          <p>{t('lending.health.risk.description')}</p>
         </div>
         <HealthFactorInfo
           segments={segments}

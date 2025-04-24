@@ -94,7 +94,7 @@ const TokenAssetsSelector = ({
         }}
       >
         <div className="flex items-center text-[14px] text-tc-secondary">
-          {t('x-lending.borrow.mode.risk.input.label')}
+          {t('lending.borrow.mode.risk.input.label')}
         </div>
         <div className="flex-center gap-[5px]">
           {value?.symbol ? (
@@ -106,7 +106,7 @@ const TokenAssetsSelector = ({
             </div>
           ) : (
             <span className="text-[16px]">
-              {t('x-lending.borrow.mode.risk.input.select')}
+              {t('lending.borrow.mode.risk.input.select')}
             </span>
           )}
           <DownOutlined className="text-[14px]" />

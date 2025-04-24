@@ -1,5 +1,5 @@
 import { useTranslate } from '@/i18n';
-import useApprove from '@/pages/x-dex/hooks/useApprove';
+import useApprove from '@/pages/dex/hooks/useApprove';
 import { Token } from '@/types/swap';
 import { CheckCircleOutlined } from '@ant-design/icons';
 import { Button } from 'antd';

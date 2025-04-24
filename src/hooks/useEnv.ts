@@ -5,7 +5,7 @@ const useEnv = () => {
 
   return {
     isMainnet,
-    CHAIN_ID: isMainnet ? 1_030 : 71,
+    CHAIN_ID: isMainnet ? 1600 : 71,
   };
 };
 

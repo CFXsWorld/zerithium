@@ -1,11 +1,11 @@
 import useProvider from '@/hooks/useProvider.ts';
 import { Contract } from 'ethers';
-import { XUNION_SWAP_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SWAP_CONTRACT } from '@/contracts';
 
 const useSwapContract = () => {
   const provider = useProvider();
 
-  const { address, abi } = XUNION_SWAP_CONTRACT.interface;
+  const { address, abi } = ZERITHIUM_SWAP_CONTRACT.interface;
 
   return new Contract(address, abi, provider);
 };

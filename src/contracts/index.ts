@@ -7,7 +7,7 @@ import { Abi, Address, erc20Abi, isAddress } from 'viem';
 import { getAddress, InterfaceAbi } from 'ethers';
 import { Token } from '@/types/swap.ts';
 
-export const XUNION_LENDING_CONTRACT: Record<
+export const ZERITHIUM_LENDING_CONTRACT: Record<
   'interface',
   { address: Address; abi: InterfaceAbi | Abi | any }
 > = {
@@ -17,7 +17,7 @@ export const XUNION_LENDING_CONTRACT: Record<
   },
 };
 
-export const XUNION_SWAP_CONTRACT: Record<
+export const ZERITHIUM_SWAP_CONTRACT: Record<
   'interface' | 'slc' | 'usdt' | 'usdc',
   { address: Address; abi: InterfaceAbi | Abi | any }
 > = {
@@ -57,7 +57,7 @@ export const XUNION_SWAP_CONTRACT: Record<
   // },
 };
 
-export const XUNION_SLC_CONTRACT: Record<
+export const ZERITHIUM_SLC_CONTRACT: Record<
   'interface' | 'oracle' | 'mutilCall',
   { address: Address; abi: InterfaceAbi | Abi | any }
 > = {
@@ -88,7 +88,7 @@ export const NATIVE_ERC20_TOKEN: Record<string, Token> = {
     name: 'WXCFX',
     decimals: 18,
   },
-  1_030: {
+  1600: {
     address: '0x26efCdC7adA14EcAf755557cc62f4FD7757586CC',
     symbol: 'CFX',
     name: 'CFX',
@@ -102,32 +102,32 @@ export const isSLCToken = (address: string) => {
   return (
     isAddress(address) &&
     getAddress(address).toLowerCase() ===
-      getAddress(XUNION_SWAP_CONTRACT.slc.address).toLowerCase()
+      getAddress(ZERITHIUM_SWAP_CONTRACT.slc.address).toLowerCase()
   );
 };
 
 export const SLCToken: Token = {
-  address: XUNION_SWAP_CONTRACT.slc.address,
+  address: ZERITHIUM_SWAP_CONTRACT.slc.address,
   symbol: 'xUSD',
   decimals: 18,
-  chainId: 1_030,
+  chainId: 1600,
   // chainId: 71,
   name: 'X Libra USD',
-  icon: 'https://espacemainnetapi.xunion.io/coin/xUSD.png',
+  icon: 'https://espacemainnetapi.zerithium.io/coin/xUSD.png',
 };
 
 export const USDTToken: Token = {
-  address: XUNION_SWAP_CONTRACT.usdt.address,
+  address: ZERITHIUM_SWAP_CONTRACT.usdt.address,
   name: 'Tether USD',
   symbol: 'USDT',
-  icon: 'https://espacemainnetapi.xunion.io/coin/1728405426994.png',
+  icon: 'https://espacemainnetapi.zerithium.io/coin/1728405426994.png',
   decimals: 18,
 };
 
 export const USDCToken: Token = {
-  address: XUNION_SWAP_CONTRACT.usdc.address,
+  address: ZERITHIUM_SWAP_CONTRACT.usdc.address,
   name: 'USD Coin',
   symbol: 'USDC',
-  icon: 'https://espacemainnetapi.xunion.io/coin/1728402879785.png',
+  icon: 'https://espacemainnetapi.zerithium.io/coin/1728402879785.png',
   decimals: 18,
 };

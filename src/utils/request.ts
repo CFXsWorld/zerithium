@@ -11,7 +11,7 @@ export const request = axios.create({
 
 request.interceptors.request.use(
   (config) => {
-    const access_token = localStorage.getItem('XUNION_TOKEN');
+    const access_token = localStorage.getItem('ZERITHIUM_TOKEN');
     // Bearer
     config.headers.Authorization = `${access_token}`;
     return config;

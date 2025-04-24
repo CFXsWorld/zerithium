@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://espacemainnetapi.xunion.io/',
+        target: 'http://espacemainnetapi.zerithium.io/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

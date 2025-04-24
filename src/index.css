@@ -11,10 +11,10 @@
 body {
 
   font-size: 14px;
-  background: var(--xunion-bg-primary);
-  color: var(--xunion-tc-primary);
+  background: var(--zerithium-bg-primary);
+  color: var(--zerithium-tc-primary);
 }
 
 .ant-table-wrapper .ant-table-thead>tr>th, .ant-table-wrapper .ant-table-thead>tr>td {
-  color: var(--xunion-tc-secondary);
+  color: var(--zerithium-tc-secondary);
 }

@@ -34,7 +34,7 @@ const DrawerContainer = ({
       flex: 1,
       minHeight: 300,
       maxHeight: 'calc(100vh-200px)',
-      backgroundColor: 'var(--xunion-fill-niubi)',
+      backgroundColor: 'var(--zerithium-fill-niubi)',
       borderTopRightRadius: 20,
       borderTopLeftRadius: 20,
     },

@@ -25,23 +25,23 @@ import TXPendingProvider from '@/components/PendingProvider.tsx';
 import { CHAINS } from '@/contracts/chains.tsx';
 import useSwapContract from './hooks/useSwapContract';
 import { useCommonStore } from './store/common';
+import zhCN from 'antd/locale/zh_CN';
+import zhHK from 'antd/locale/zh_HK';
+import enUS from 'antd/locale/en_US';
 
 const Routes = () => useRoutes(routes);
 
 const config = createConfig({
   chains: [
-    scrollSepolia,
     mainnet,
-    scroll,
     {
       ...confluxESpaceTestnet,
       rpcUrls: {
         default: {
-          http: [CHAINS.eSpaceTest.rpc[0]],
+          http: [CHAINS.zeroGTest.rpc[0]],
         },
       },
     },
-    confluxESpace,
   ],
   connectors: [injected({ shimDisconnect: false })],
   transports: {
@@ -63,7 +63,7 @@ const queryClient = new QueryClient({
   },
 });
 
-const Dapp = ({ children }: PropsWithChildren<{ locale: Locale }>) => {
+const Dapp = ({ children, locale }: PropsWithChildren<{ locale: Locale }>) => {
   const { systemTheme, theme } = useTheme();
   const { address } = useAccount();
 
@@ -78,10 +78,12 @@ const Dapp = ({ children }: PropsWithChildren<{ locale: Locale }>) => {
     });
   }, []);
 
+  console.log(locale);
   return (
     <ConfigProvider
       key={address}
       // wave={{ disabled: true }}
+      locale={locale === 'zh-CN' ? zhCN : locale === 'zh-HK' ? zhHK : enUS}
       theme={{
         cssVar: true,
         hashed: false,
@@ -89,7 +91,7 @@ const Dapp = ({ children }: PropsWithChildren<{ locale: Locale }>) => {
           isDark ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
         ],
         token: {
-          colorPrimary: '#6E5DE6',
+          colorPrimary: isDark ? '#fff' : '#000',
         },
         components: {
           Button: {

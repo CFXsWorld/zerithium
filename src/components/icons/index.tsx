@@ -3,6 +3,9 @@ import { cn } from '@/utils/classnames.ts';
 import { CSSProperties, HTMLAttributes, PropsWithChildren } from 'react';
 import AntdIcon from '@ant-design/icons';
 import LogoSvg from '@/assets/svgs/external/logo.svg?react';
+import LogoLight from '@/assets/images/logo-light.png';
+import LogoDark from '@/assets/images/logo-dark.png';
+
 import CreatePool from '@/assets/svgs/other/create-pool.svg?react';
 import Pools from '@/assets/svgs/other/pools.svg?react';
 import Swap from '@/assets/svgs/other/swap.svg?react';
@@ -22,6 +25,7 @@ import BuySell from '@/assets/svgs/menus/buy-sell.svg?react';
 import Borrow from '@/assets/svgs/menus/Borrow.svg?react';
 import Exchange from '@/assets/svgs/other/exchange.svg?react';
 import SlowmoSvg from '@/assets/svgs/status/slowmo.svg?react';
+import ZeroG from '@/assets/Zg.svg?react';
 
 export type IconProps = PropsWithChildren<
   {
@@ -41,14 +45,23 @@ export const Icon = ({ className, style, children, ...props }: IconProps) => {
 };
 
 export const LogoIcon = (props: IconProps) => (
-  <Icon {...props}>
-    <LogoSvg />
-  </Icon>
+  <img
+    src={LogoLight}
+    alt="logo"
+    {...props}
+    className="h-full w-[36px] rounded-[8px]"
+  />
 );
 
 export const CreatePoolIcon = (props: IconProps) => (
   <Icon {...props}>
     <CreatePool />
+  </Icon>
+);
+
+export const ZeroGIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <ZeroG />
   </Icon>
 );
 

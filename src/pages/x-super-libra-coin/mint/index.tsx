@@ -9,7 +9,7 @@ import WithAuthButton from '@/components/Wallet/WithAuthButton.tsx';
 import { Button } from 'antd';
 import useWalletAuth from '@/components/Wallet/useWalletAuth.ts';
 import useApprove from '@/pages/x-dex/hooks/useApprove.ts';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { Address } from 'viem';
 import useNativeToken from '@/hooks/useNativeToken.ts';
 import Tip from '@/pages/x-super-libra-coin/burn/Tip.tsx';
@@ -43,7 +43,7 @@ function MintSLC() {
   } = useApprove({
     token: inputToken!,
     amount: payAmount,
-    spenderAddress: XUNION_SLC_CONTRACT.interface.address as Address,
+    spenderAddress: ZERITHIUM_SLC_CONTRACT.interface.address as Address,
   });
 
   const { t } = useTranslate();

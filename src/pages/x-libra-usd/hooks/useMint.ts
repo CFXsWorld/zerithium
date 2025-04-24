@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Token } from '@/types/swap.ts';
 import useErc20Balance, { formatNumber } from '@/hooks/useErc20Balance.ts';
-import { SLCToken, XUNION_SLC_CONTRACT } from '@/contracts';
+import { SLCToken, ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { isNumeric } from '@/utils/isNumeric.ts';
 import useXWriteContract from '@/hooks/useXWriteContract.ts';
 import { Address, erc20Abi } from 'viem';
@@ -141,7 +141,7 @@ const useMintSLC = () => {
   const onConfirm = () => {
     if (decimals && payAmount && inputToken) {
       const amountIn = parseUnits(payAmount, decimals);
-      const { address, abi } = XUNION_SLC_CONTRACT.interface;
+      const { address, abi } = ZERITHIUM_SLC_CONTRACT.interface;
       writeContractAsync({
         address: address as Address,
         abi,

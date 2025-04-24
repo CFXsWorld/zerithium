@@ -1,5 +1,5 @@
 import useXWriteContract from '@/hooks/useXWriteContract.ts';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { Address, erc20Abi } from 'viem';
 import { SLCAsset } from '@/types/slc.ts';
 import useNativeToken from '@/hooks/useNativeToken.ts';
@@ -56,7 +56,7 @@ const useProvide = ({
   const provideNormal = async () => {
     if (decimals) {
       const amountIn = parseUnits(payAmount, decimals);
-      const { address, abi } = XUNION_SLC_CONTRACT.interface;
+      const { address, abi } = ZERITHIUM_SLC_CONTRACT.interface;
       writeContractAsync({
         address: address as Address,
         abi,
@@ -68,7 +68,7 @@ const useProvide = ({
 
   const provideCFX = async () => {
     if (decimals) {
-      const { address, abi } = XUNION_SLC_CONTRACT.interface;
+      const { address, abi } = ZERITHIUM_SLC_CONTRACT.interface;
       writeContractAsync({
         address: address as Address,
         abi,

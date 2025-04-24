@@ -44,7 +44,7 @@ const Audited = () => {
           <Link to="https://github.com/artixv" target="_blank">
             <img src={theme === 'dark' ? githubd : github} alt="" />
           </Link>
-          <Link to="https://doc.xunion.io" target="_blank">
+          <Link to="https://doc.zerithium.io" target="_blank">
             <img
               src={theme === 'dark' ? Docsd : Docs}
               alt=""
@@ -53,7 +53,7 @@ const Audited = () => {
           </Link>
         </div>
         <span className="flex items-center gap-[5px] pb-[20px] text-[14px]">
-          <span>EMAIL： hallo@xunion.io</span>
+          <span>EMAIL： hallo@zerithium.io</span>
         </span>
       </div>
     </>

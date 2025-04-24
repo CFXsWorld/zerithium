@@ -6,9 +6,7 @@ import useEnv from './useEnv';
 const useProvider = () => {
   // const rpc = CHAINS.eSpaceTest.rpc[0];
 
-  const { isMainnet } = useEnv();
-
-  const rpc = isMainnet ? CHAINS.eSpace.rpc[0] : CHAINS.eSpaceTest.rpc[0];
+  const rpc = CHAINS.zeroGTest.rpc[0];
 
   return new JsonRpcProvider(rpc);
 };

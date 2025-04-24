@@ -13,9 +13,7 @@ const HealthFactor = ({
   if (value) {
     if (Number(value) >= 10) {
       return (
-        <span className="text-status-success">
-          {t('x-lending.health.fine')}
-        </span>
+        <span className="text-status-success">{t('lending.health.fine')}</span>
       );
     }
     if (Number(value) >= 2) {

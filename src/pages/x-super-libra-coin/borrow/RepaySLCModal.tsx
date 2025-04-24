@@ -3,7 +3,7 @@ import TokenInput from '@/components/TokenInput.tsx';
 import { CheckCircleOutlined } from '@ant-design/icons';
 import WithAuthButton from '@/components/Wallet/WithAuthButton.tsx';
 import useApprove from '@/pages/x-dex/hooks/useApprove.ts';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { Address } from 'viem';
 import Warning from '@/components/Warning.tsx';
 import { formatCurrency } from '@/utils';
@@ -50,7 +50,7 @@ const RepaySLCModal = ({
   } = useApprove({
     token: inputToken!,
     amount: payAmount,
-    spenderAddress: XUNION_SLC_CONTRACT.interface.address as Address,
+    spenderAddress: ZERITHIUM_SLC_CONTRACT.interface.address as Address,
     hf: isRepayAll ? 1.1 : 1.0001,
   });
 

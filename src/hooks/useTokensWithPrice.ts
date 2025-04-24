@@ -1,7 +1,7 @@
 import { Token } from '@/types/swap.ts';
 import { useEffect, useState } from 'react';
 import useMulticall, { ContractCall } from '@/hooks/useMulticall.ts';
-import { XUNION_SLC_CONTRACT } from '@/contracts';
+import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import { Address, erc20Abi, isAddress } from 'viem';
 import { formatUnits } from 'ethers';
 import { formatNumber } from '@/hooks/useErc20Balance.ts';
@@ -45,8 +45,8 @@ const useTokensWithPrice = () => {
       setLoading(true);
       const calls: ContractCall[] = tokenData.items?.map((token) => ({
         name: 'getPrice',
-        abi: XUNION_SLC_CONTRACT.oracle.abi,
-        address: XUNION_SLC_CONTRACT.oracle.address as Address,
+        abi: ZERITHIUM_SLC_CONTRACT.oracle.abi,
+        address: ZERITHIUM_SLC_CONTRACT.oracle.address as Address,
         values: [getRealAddress(token)],
       }));
       const calls2: ContractCall[] = tokenData.items?.map((token) => ({

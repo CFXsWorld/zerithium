@@ -2,7 +2,7 @@ import { Contract, JsonRpcProvider } from 'ethers';
 import CIS from '@/contracts/abi/CIS.json';
 import { CHAINS } from '@/contracts/chains.tsx';
 const useCISContract = () => {
-  const rpc = CHAINS.eSpace.rpc[0];
+  const rpc = CHAINS.zeroGTest.rpc[0];
   const provider = new JsonRpcProvider(rpc);
   const contract = new Contract(CIS.address, CIS.abi, provider);
 
