@@ -1,12 +1,6 @@
 import { PropsWithChildren, useEffect } from 'react';
 import { useRoutes, HashRouter } from 'react-router-dom';
-import {
-  confluxESpace,
-  confluxESpaceTestnet,
-  mainnet,
-  scrollSepolia,
-  scroll,
-} from 'wagmi/chains';
+import { mainnet } from 'wagmi/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Locale, useLocale } from '@/i18n';
 import { useAccount, WagmiProvider } from 'wagmi';
@@ -22,7 +16,6 @@ import WalletDetailModal from '@/components/Wallet/WalletDetailModal.tsx';
 import SubmittedModal from '@/components/modals/SubmittedModal.tsx';
 import { antdTableTokens } from '@/styles/reset.ts';
 import TXPendingProvider from '@/components/PendingProvider.tsx';
-import { CHAINS } from '@/contracts/chains.tsx';
 import useSwapContract from './hooks/useSwapContract';
 import { useCommonStore } from './store/common';
 import zhCN from 'antd/locale/zh_CN';
@@ -31,25 +24,29 @@ import enUS from 'antd/locale/en_US';
 
 const Routes = () => useRoutes(routes);
 
-const config = createConfig({
-  chains: [
-    mainnet,
-    {
-      ...confluxESpaceTestnet,
-      rpcUrls: {
-        default: {
-          http: [CHAINS.zeroGTest.rpc[0]],
-        },
-      },
+const zeroGTestnet = {
+  id: 16600,
+  name: '0G-Newton-Testnet',
+  iconUrl: '',
+  iconBackground: '#fff',
+  nativeCurrency: { name: 'A0GI', symbol: 'A0GI', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['https://16600.rpc.thirdweb.com/'] },
+  },
+  blockExplorers: {
+    default: {
+      name: '0G-Newton-Testnet',
+      url: 'https://chainscan-newton.0g.ai/',
     },
-  ],
+  },
+};
+
+const config = createConfig({
+  chains: [mainnet, zeroGTestnet],
   connectors: [injected({ shimDisconnect: false })],
   transports: {
     [mainnet.id]: http(),
-    [confluxESpaceTestnet.id]: http(),
-    [confluxESpace.id]: http(),
-    [scrollSepolia.id]: http(),
-    [scroll.id]: http(),
+    [zeroGTestnet.id]: http(),
   },
 });
 
@@ -78,7 +75,6 @@ const Dapp = ({ children, locale }: PropsWithChildren<{ locale: Locale }>) => {
     });
   }, []);
 
-  console.log(locale);
   return (
     <ConfigProvider
       key={address}

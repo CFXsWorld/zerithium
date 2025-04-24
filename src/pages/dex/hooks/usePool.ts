@@ -20,8 +20,7 @@ const usePool = () => {
   };
 
   const onSearch = (value: string) => {
-    console.log(value);
-    mutate({ pageNum: 1, pageSize: 100 });
+    mutate({ pageNum: 1, pageSize: 100, nameOrAddress: value });
   };
   return {
     pools: data?.items || [],

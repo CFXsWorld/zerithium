@@ -1,13 +1,14 @@
 import { LogoIcon, SettingIcon } from '@/components/icons';
 import Nav from '@/components/Header/Nav.tsx';
 import ConnectButton from '@/components/Wallet/ConnectButton';
-import { Button, Popover } from 'antd';
+import { Button, Popover, Divider } from 'antd';
 import { useTheme } from '@/components/Theme';
 import Lang from '@/components/Lang';
 import { MoonOutlined, SunOutlined } from '@ant-design/icons';
 import { cn } from '@/utils/classnames.ts';
 import PendingTransactions from '@/components/PendingTransactions.tsx';
 import useTxStore from '@/store/pending.ts';
+import Audited from '@/components/Header/Audited.tsx';
 
 const Header = () => {
   const { setTheme, theme } = useTheme();
@@ -57,6 +58,10 @@ const Header = () => {
                 <div className="flex-center-between">
                   <span>Language</span>
                   <Lang />
+                </div>
+                <Divider className="my-[5px]" />
+                <div className="flex-center-between">
+                  <Audited />
                 </div>
               </div>
             }

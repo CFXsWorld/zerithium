@@ -16,8 +16,6 @@ const ChainSelector = () => {
 
   const chain = chains.find((item) => item.chainId === chainId);
 
-  console.log(chains);
-
   const items: MenuProps['items'] = chains.map((item) => ({
     key: item.chainId,
     label: (

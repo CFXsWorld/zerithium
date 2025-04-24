@@ -81,8 +81,7 @@ const useCalcAmount = ({
             );
             setPriceImpact(impact);
           })
-          .catch((e) => {
-            console.log(e);
+          .catch(() => {
             setIsInsufficientLiquidity(true);
             setPayAmount('');
             setInputTokenTotalPrice(0);

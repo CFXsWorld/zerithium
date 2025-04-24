@@ -6,7 +6,7 @@ const useAddToken = () => {
 
     if (ethereum) {
       try {
-        const wasAdded = await ethereum.request({
+        await ethereum.request({
           method: 'wallet_watchAsset',
           params: {
             type: 'ERC20',
@@ -18,12 +18,6 @@ const useAddToken = () => {
             },
           },
         });
-
-        if (wasAdded) {
-          console.log('Token added!');
-        } else {
-          console.log('Token not added');
-        }
       } catch (error) {
         console.error(error);
       }

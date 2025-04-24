@@ -130,7 +130,6 @@ const useRepay = ({
 
   const onRepayAllChange = async (checked: boolean) => {
     setRepayAll(checked);
-    console.log(availableAmount, 'availableAmount');
     if (checked) {
       setPayAmount(String(availableAmount));
     } else {

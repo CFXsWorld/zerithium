@@ -58,7 +58,6 @@ const PoolList = () => {
       dataIndex: 'tvl',
       width: 240,
       render: (value: string) => {
-        console.log(formatCurrency(Number(formatUnits(value || 0n)), true));
         return (
           <div className="flex flex-col gap-[5px]">
             {formatCurrency(Number(formatUnits(value || 0n)), true)}

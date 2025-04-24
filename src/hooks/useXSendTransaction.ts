@@ -15,7 +15,6 @@ const extraError = (error: WriteContractErrorType) => {
 const useXSendTransaction = ({
   showSubmittedModal = true,
   globalNotice = true,
-  pendingPool = true,
   onSubmitted,
   onWriteSuccess,
   onError,
@@ -71,7 +70,6 @@ const useXSendTransaction = ({
 
   useEffect(() => {
     if (isSuccess && hash && globalNotice) {
-      console.log(pendingPool);
       // pendingPool
       // TODO collect 2 pools
       writeTxNotification(hash);

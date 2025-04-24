@@ -88,7 +88,7 @@ export const NATIVE_ERC20_TOKEN: Record<string, Token> = {
     name: 'WXCFX',
     decimals: 18,
   },
-  1600: {
+  16600: {
     address: '0x26efCdC7adA14EcAf755557cc62f4FD7757586CC',
     symbol: 'CFX',
     name: 'CFX',
@@ -110,7 +110,7 @@ export const SLCToken: Token = {
   address: ZERITHIUM_SWAP_CONTRACT.slc.address,
   symbol: 'xUSD',
   decimals: 18,
-  chainId: 1600,
+  chainId: 16600,
   // chainId: 71,
   name: 'X Libra USD',
   icon: 'https://espacemainnetapi.zerithium.io/coin/xUSD.png',
