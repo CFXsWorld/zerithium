@@ -3,7 +3,7 @@ import PageLayout from '@/components/Layout/PageLayout';
 import Dashboard from '@/pages/lending/dashboard';
 import Market from '@/pages/lending/market';
 import MarketDetail from '@/pages/lending/market/MarketDetail';
-
+import Rewards from '@/pages/rewards';
 const routes = [
   {
     path: '/',
@@ -33,6 +33,10 @@ const routes = [
             element: <MarketDetail />,
           },
         ],
+      },
+      {
+        path: 'rewards',
+        element: <Rewards />,
       },
     ],
   },

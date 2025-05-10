@@ -12,7 +12,7 @@ export const ZERITHIUM_LENDING_CONTRACT: Record<
   { address: Address; abi: InterfaceAbi | Abi | any }
 > = {
   interface: {
-    address: '0x006b896A797c132b2fbf4269cC8576Ff48f78897',
+    address: '0x7e6276A95faC0744Cf9569b55E629e80bA6E3eAF',
     abi: LendingInterfaceABI,
   },
 };
@@ -40,21 +40,6 @@ export const ZERITHIUM_SWAP_CONTRACT: Record<
     address: '0x6963efed0ab40f6c3d7bda44a05dcf1437c44372',
     abi: erc20Abi,
   },
-  // // testnet
-  // slc: {
-  //   address: '0x8c4B892AF3655eAE24cf426c4D242Ab95bc3903D',
-  //   abi: erc20Abi,
-  // },
-  // // testnet
-  // usdt: {
-  //   address: '0x27Fc32d2AD515c9AFE5e6c8434B32053ce0b042B',
-  //   abi: erc20Abi,
-  // },
-  // // testnet
-  // usdc: {
-  //   address: '0xcB12b404c3Ed1bB67d9Bd6ca044283497a8eB18a',
-  //   abi: erc20Abi,
-  // },
 };
 
 export const ZERITHIUM_SLC_CONTRACT: Record<
@@ -72,11 +57,11 @@ export const ZERITHIUM_SLC_CONTRACT: Record<
     abi: SLCInterfaceABI,
   },
   oracle: {
-    address: '0x280fC0D155ABf8cdD5341c9e7CbED669E9A3D466',
+    address: '0x3fE74abD8ED3A646d37Fac94F5c2bf37bcdb63f5',
     abi: iSlcOracleABI,
   },
   mutilCall: {
-    address: '0xFF8fB8a62B70e025C07B066D34FAb28277260391',
+    address: '0x17e26B882B5C3affDF427607122C79C46eb42B11',
     abi: Multicallespacetestnet,
   },
 };

@@ -4,6 +4,7 @@ import { Button } from 'antd';
 import useWalletStore from '@/store/wallet.ts';
 import useWalletAuth from '@/components/Wallet/useWalletAuth.ts';
 import { BUTTON_ACCESS } from '@/types/auth.ts';
+import { useAccount } from 'wagmi';
 
 const WithAuthButton = ({
   children,
@@ -12,25 +13,26 @@ const WithAuthButton = ({
 }: HTMLAttributes<HTMLElement> &
   PropsWithChildren<{ access?: BUTTON_ACCESS[]; disabled?: boolean }>) => {
   const { switchChain } = useSwitchChain();
+  const { address, chainId } = useAccount();
 
-  const { walletConnected, isErrorNetwork, CHAIN_ID } = useWalletAuth(access);
+  const { CHAIN_ID } = useWalletAuth(access);
   const onOpen = useWalletStore((state) => state.onOpen);
 
   const child = children;
   const onAuthClick = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-    if (!walletConnected) {
+    if (!address) {
       onOpen(true);
       return;
     }
 
-    if (isErrorNetwork) {
+    if (chainId !== CHAIN_ID) {
       switchChain({ chainId: CHAIN_ID });
       return;
     }
   };
 
-  if (!walletConnected) {
+  if (!address) {
     return (
       <Button
         size="large"
@@ -43,7 +45,7 @@ const WithAuthButton = ({
     );
   }
 
-  if (isErrorNetwork) {
+  if (chainId !== CHAIN_ID) {
     return (
       <Button
         className="h-[56px]  w-full border-0 bg-status-error-non-opaque hover:!bg-status-error-non-opaque"
@@ -52,7 +54,7 @@ const WithAuthButton = ({
         onClick={onAuthClick}
         danger
       >
-        Switch network
+        Switch Network
       </Button>
     );
   }

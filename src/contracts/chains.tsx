@@ -8,6 +8,6 @@ export const CHAINS: Record<ChainName, ChainType> = {
     chainId: 16600,
     name: '0G Newton Testnet',
     icon: <ZeroGIcon />,
-    rpc: ['https://16600.rpc.thirdweb.com/'],
+    rpc: ['https://evmrpc-testnet.0g.ai/'],
   },
 };

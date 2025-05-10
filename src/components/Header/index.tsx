@@ -1,6 +1,7 @@
 import { LogoIcon, SettingIcon } from '@/components/icons';
 import Nav from '@/components/Header/Nav.tsx';
 import ConnectButton from '@/components/Wallet/ConnectButton';
+
 import { Button, Popover, Divider } from 'antd';
 import { useTheme } from '@/components/Theme';
 import Lang from '@/components/Lang';

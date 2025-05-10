@@ -1,10 +1,12 @@
+import { ReactNode } from 'react';
+
 export interface Token {
   decimals?: number;
   symbol?: string;
   name?: string;
   price?: number;
   address: string;
-  icon?: string;
+  icon?: string | ReactNode;
   amount?: number;
   chainId?: number;
   tvl?: string;

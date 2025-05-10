@@ -1,6 +1,5 @@
 import { PropsWithChildren, useEffect } from 'react';
 import { useRoutes, HashRouter } from 'react-router-dom';
-import { mainnet } from 'wagmi/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Locale, useLocale } from '@/i18n';
 import { useAccount, WagmiProvider } from 'wagmi';
@@ -8,7 +7,6 @@ import { ConfigProvider, theme as antdTheme } from 'antd';
 import { injected } from 'wagmi/connectors';
 import { IntlProvider } from 'react-intl';
 import { createConfig, http } from 'wagmi';
-
 import { ThemeProvider, useTheme } from '@/components/Theme';
 import routes from './routes';
 import ConnectModal from '@/components/Wallet/ConnectModal.tsx';
@@ -21,17 +19,22 @@ import { useCommonStore } from './store/common';
 import zhCN from 'antd/locale/zh_CN';
 import zhHK from 'antd/locale/zh_HK';
 import enUS from 'antd/locale/en_US';
+import zeroGIcon from '@/assets/images/zero.png';
+import ChainBlockHeight from './components/ChainBlockHeight';
+
+import { ConnectKitProvider } from 'connectkit';
 
 const Routes = () => useRoutes(routes);
 
 const zeroGTestnet = {
   id: 16600,
-  name: '0G-Newton-Testnet',
-  iconUrl: '',
-  iconBackground: '#fff',
+  name: '0G Newton Testnet',
+  iconUrl: zeroGIcon,
   nativeCurrency: { name: 'A0GI', symbol: 'A0GI', decimals: 18 },
   rpcUrls: {
-    default: { http: ['https://16600.rpc.thirdweb.com/'] },
+    default: {
+      http: ['https://evmrpc-testnet.0g.ai/'],
+    },
   },
   blockExplorers: {
     default: {
@@ -42,10 +45,9 @@ const zeroGTestnet = {
 };
 
 const config = createConfig({
-  chains: [mainnet, zeroGTestnet],
+  chains: [zeroGTestnet],
   connectors: [injected({ shimDisconnect: false })],
   transports: {
-    [mainnet.id]: http(),
     [zeroGTestnet.id]: http(),
   },
 });
@@ -78,7 +80,6 @@ const Dapp = ({ children, locale }: PropsWithChildren<{ locale: Locale }>) => {
   return (
     <ConfigProvider
       key={address}
-      // wave={{ disabled: true }}
       locale={locale === 'zh-CN' ? zhCN : locale === 'zh-HK' ? zhHK : enUS}
       theme={{
         cssVar: true,
@@ -100,14 +101,16 @@ const Dapp = ({ children, locale }: PropsWithChildren<{ locale: Locale }>) => {
       }}
     >
       <QueryClientProvider client={queryClient}>
-        <TXPendingProvider>
-          <ConnectModal />
-          <SubmittedModal />
-          <WalletDetailModal />
-          {children}
-          <div className="w-full max-md:h-[100px] md:h-[50px]" />
-          {/* <ChainBlockHeight /> */}
-        </TXPendingProvider>
+        <ConnectKitProvider mode={isDark ? 'dark' : 'light'}>
+          <TXPendingProvider>
+            <ConnectModal />
+            <SubmittedModal />
+            <WalletDetailModal />
+            {children}
+            <div className="w-full max-md:h-[100px] md:h-[50px]" />
+            <ChainBlockHeight />
+          </TXPendingProvider>
+        </ConnectKitProvider>
       </QueryClientProvider>
     </ConfigProvider>
   );

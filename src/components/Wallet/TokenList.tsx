@@ -37,7 +37,7 @@ const TokenList = ({
           <div className="flex flex-1 flex-col">
             <span className="text-[14px]"> {item.name}</span>
             <span className="text-[12px] text-tc-secondary">
-              <span>{`${item.amount} ${item.symbol}`}</span>
+              <span>{`${item.amount || 0} ${item.symbol}`}</span>
             </span>
           </div>
           <div className="flex items-center gap-[20px] text-[14px]">

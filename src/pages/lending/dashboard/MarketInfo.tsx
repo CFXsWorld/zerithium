@@ -14,6 +14,7 @@ import useCalcRiskValue from '@/hooks/useCalcRiskValue';
 import { Address } from 'viem';
 import useTokenGroupAssets from '@/components/Borrow/useTokenGroupAssets';
 import { TokenIcon } from '@/components/icons';
+import { InfoCircleOutlined } from '@ant-design/icons';
 const MarketInfo = ({
   netWorth,
   netApy,
@@ -173,11 +174,12 @@ const MarketInfo = ({
           <Button
             type="text"
             ghost
-            className="text-theme"
+            className="flex items-center gap-[1px] text-theme"
             size="small"
             onClick={() => setRiskOpen(true)}
           >
             {t('lending.health.risk.detail')}
+            <InfoCircleOutlined />
           </Button>
         </div>
       </div>

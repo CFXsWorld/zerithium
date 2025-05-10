@@ -8,7 +8,7 @@ const useProvider = () => {
 
   const rpc = CHAINS.zeroGTest.rpc[0];
 
-  return new JsonRpcProvider(rpc);
+  return { rpc };
 };
 
 export default useProvider;

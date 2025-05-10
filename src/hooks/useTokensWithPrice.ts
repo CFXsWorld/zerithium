@@ -31,10 +31,7 @@ const useTokensWithPrice = () => {
 
   useEffect(() => {
     if (address) {
-      getTokens({
-        pageNum: 1,
-        pageSize: 50,
-      }).then((res) => {
+      getTokens().then((res) => {
         setTokens(res.items || []);
       });
     }

@@ -1,10 +1,16 @@
 /// <reference types="vite-plugin-svgr/client" />
 import { cn } from '@/utils/classnames.ts';
-import { CSSProperties, HTMLAttributes, PropsWithChildren } from 'react';
+import {
+  CSSProperties,
+  HTMLAttributes,
+  PropsWithChildren,
+  ReactNode,
+} from 'react';
 import AntdIcon from '@ant-design/icons';
 // import LogoSvg from '@/assets/svgs/external/logo.svg?react';
 import LogoLight from '@/assets/images/logo-light.png';
 // import LogoDark from '@/assets/images/logo-dark.png';
+import Git from '@/assets/gift.svg?react';
 
 import CreatePool from '@/assets/svgs/other/create-pool.svg?react';
 import Pools from '@/assets/svgs/other/pools.svg?react';
@@ -27,6 +33,7 @@ import Exchange from '@/assets/svgs/other/exchange.svg?react';
 import SlowmoSvg from '@/assets/svgs/status/slowmo.svg?react';
 import ZeroG from '@/assets/Zg.svg?react';
 
+export { ZeroG };
 export type IconProps = PropsWithChildren<
   {
     className?: string;
@@ -151,23 +158,43 @@ export const TokenIcon = ({
   name = 'X',
   ...rest
 }: {
-  src?: string;
+  src?: string | ReactNode;
   className?: string;
   width?: number;
   height?: number;
   name?: string;
-} & IconProps) =>
-  src ? (
-    <img
-      src={src}
-      alt=""
-      className={cn('inline-block h-[20px] w-[20px] rounded-full', className)}
-      style={{
-        width,
-        height,
-      }}
-    />
-  ) : (
+} & IconProps) => {
+  if (typeof src === 'string') {
+    return (
+      <img
+        src={src}
+        alt=""
+        className={cn('inline-block h-[20px] w-[20px] rounded-full', className)}
+        style={{
+          width,
+          height,
+        }}
+      />
+    );
+  }
+  if (typeof src === 'object' && src !== null) {
+    return (
+      <span
+        style={{
+          width,
+          height,
+        }}
+        className={cn(
+          'flex h-[25px] w-[25px] items-center justify-center overflow-hidden rounded-full  text-[35px] font-bold text-theme',
+          className
+        )}
+        {...rest}
+      >
+        {src}
+      </span>
+    );
+  }
+  return (
     <span
       style={{
         width,
@@ -182,6 +209,7 @@ export const TokenIcon = ({
       {name.charAt(0).toUpperCase()}
     </span>
   );
+};
 
 export const BuySellIcon = (props: IconProps) => (
   <Icon {...props}>
@@ -202,5 +230,11 @@ export const ExchangeIcon = (props: IconProps) => (
 export const SpinIcon = ({ className, ...props }: IconProps) => (
   <Icon {...props} className={cn('animate-spin text-[16px]', className)}>
     <SlowmoSvg />
+  </Icon>
+);
+
+export const GitIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <Git />
   </Icon>
 );

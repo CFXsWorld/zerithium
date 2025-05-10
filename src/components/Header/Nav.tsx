@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/utils/classnames.ts';
-import { LogoIcon } from '@/components/icons';
+import { LogoIcon, GitIcon } from '@/components/icons';
 import { useTranslate } from '@/i18n';
 
 const Nav = () => {
@@ -17,22 +17,29 @@ const Nav = () => {
       path: '/lending/market',
       mather: (pathname: string) => pathname.includes('/lending/market'),
     },
+    {
+      name: 'Rewards',
+      // name: t('common.nav.lending.dashboard'),
+      path: '/rewards',
+      mather: (pathname: string) => pathname.includes('/rewards'),
+      icon: <GitIcon />,
+    },
   ];
 
   const { pathname } = useLocation();
   return (
-    <div className="flex items-center gap-[40px] text-[16px] max-md:flex-1 max-md:justify-between max-md:gap-[5px] max-md:text-[14px]">
+    <div className="flex items-center gap-[40px] text-[16px] max-md:flex-1 max-md:justify-between max-md:gap-[5px] max-md:text-[12px]">
       <div className="flex-center gap-[10px]">
         <LogoIcon className="text-[40px] max-md:hidden" />
         <span className="text-[20px] font-bold max-md:hidden">Zerithium</span>
       </div>
-      <div className="flex-center gap-[30px] max-md:gap-[20px]">
+      <div className="flex-center gap-[30px] max-md:gap-[10px]">
         {menus.map((child) => (
           <Link
             key={child.path}
             to={child.path}
             className={cn(
-              ' px-[12px] text-[16px]  font-bold text-tc-secondary max-md:px-[8px] ',
+              ' px-[12px] text-[16px]  font-bold text-tc-secondary max-md:px-[8px] max-md:text-[14px] ',
               {
                 'text-[16px] font-bold text-tc-primary ':
                   child.mather(pathname),
@@ -40,6 +47,11 @@ const Nav = () => {
             )}
           >
             {child.name}
+            {child.icon && (
+              <span className="mr-[5px] text-[20px] max-md:text-[16px]">
+                {child.icon}
+              </span>
+            )}
           </Link>
         ))}
       </div>
