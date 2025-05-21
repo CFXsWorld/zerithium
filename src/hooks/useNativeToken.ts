@@ -7,7 +7,7 @@ import { formatNumber } from '@/hooks/useErc20Balance.ts';
 import { JsonRpcProvider } from 'ethers';
 
 const useNativeToken = () => {
-  const { chainId = 16600, address } = useAccount();
+  const { chainId = 16601, address } = useAccount();
 
   const { rpc } = useProvider();
   const getNativeTokenERC20Address = (token: Token) => {

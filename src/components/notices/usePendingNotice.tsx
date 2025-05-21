@@ -2,8 +2,7 @@ import { notification } from 'antd';
 import { CheckCircleFilled, CloseCircleFilled } from '@ant-design/icons';
 import { useTranslate } from '@/i18n';
 
-// export const confluxScan = 'https://evmtestnet.confluxscan.io/';
-export const confluxScan = 'https://evm.confluxscan.io/';
+export const confluxScan = 'https://chainscan-newton.0g.ai/';
 
 const usePendingNotice = () => {
   const { t } = useTranslate();
@@ -18,7 +17,7 @@ const usePendingNotice = () => {
           <div className="flex-start">
             <CloseCircleFilled className="text-[24px] text-red-600" />
           </div>
-          <div className="flex flex-1 flex-col gap-[10px]">
+          <div className="flex w-full flex-col gap-[10px]">
             <span className="font-bold">
               {t('common.pending.write.title.error')}
             </span>
@@ -32,7 +31,7 @@ const usePendingNotice = () => {
                 {t('common.pending.view.scan')}
               </a>
             ) : (
-              <div className="flex h-[auto] flex-1 flex-wrap text-tc-secondary">
+              <div className=" h-[auto] whitespace-pre-wrap break-words text-tc-secondary">
                 {message}
               </div>
             )}

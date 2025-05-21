@@ -9,7 +9,7 @@ import { useTranslate } from '@/i18n';
 const chains: ChainType[] = [CHAINS.zeroGTest];
 
 const ChainSelector = () => {
-  const chainId = 16600;
+  const chainId = 16601;
   const [open, setOpen] = useState(false);
 
   const { t } = useTranslate();

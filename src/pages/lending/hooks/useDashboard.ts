@@ -26,7 +26,7 @@ const useDashboard = () => {
 
   const {
     mutate: getAssets,
-    data,
+    data: assets,
     isPending,
   } = useMutation({
     mutationFn: getLendingAssets,
@@ -89,15 +89,15 @@ const useDashboard = () => {
   });
 
   useEffect(() => {
-    if (userAssets && data?.items?.length && address && userMode) {
+    if (userAssets && assets?.items?.length && address && userMode) {
       setLoading(true);
-      console.log(userAssets, 'userAssets');
       const tokens = (userAssets as string[][])[0];
       const depositAmounts = (userAssets as bigint[][])[1];
       const lendingAmounts = (userAssets as bigint[][])[2];
       const depositInterests = (userAssets as bigint[][])[3];
       const lendingInterests = (userAssets as bigint[][])[4];
       const totalAvailableAmounts = (userAssets as bigint[][])[5];
+
       const calls: ContractCall[] = tokens.map((tokenAddress) => ({
         name: 'getPrice',
         abi: ZERITHIUM_SLC_CONTRACT.oracle.abi,
@@ -118,7 +118,7 @@ const useDashboard = () => {
             const newData = [];
             for (let index = 0; index < tokens.length; index++) {
               const tokenAddress = tokens[index];
-              const asset = (data.items || []).find(
+              const asset = (assets.items || []).find(
                 (n) =>
                   n.token.address?.toLowerCase() === tokenAddress?.toLowerCase()
               );
@@ -215,7 +215,7 @@ const useDashboard = () => {
           setLoading(false);
         });
     }
-  }, [userAssets, address, data, userMode]);
+  }, [userAssets, address, assets, userMode]);
 
   const netWorth = useMemo(() => {
     return userProfile ? (userProfile as bigint[])[0] : 0n;

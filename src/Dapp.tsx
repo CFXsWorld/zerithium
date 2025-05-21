@@ -28,7 +28,7 @@ import { ConnectKitProvider } from 'connectkit';
 const Routes = () => useRoutes(routes);
 
 const zeroGTestnet = {
-  id: 16600,
+  id: 16601,
   name: '0G Newton Testnet',
   iconUrl: zeroGIcon,
   nativeCurrency: { name: 'A0GI', symbol: 'A0GI', decimals: 18 },

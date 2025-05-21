@@ -68,7 +68,7 @@ const AssetInfo = ({ asset }: { asset?: LendingAsset }) => {
               {t('lending.market.detail.oracle')}
             </span>
             <span className="text-[20px] font-bold">
-              {formatCurrency(formatNumber(asset?.oraclePrice || 0, 6), true)}
+              {formatCurrency(formatNumber(asset?.oraclePrice || 0, 6), false)}
             </span>
           </div>
         </div>

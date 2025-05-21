@@ -66,7 +66,7 @@ export const ZERITHIUM_SLC_CONTRACT: Record<
 };
 
 export const NATIVE_ERC20_TOKEN: Record<string, Token> = {
-  16600: {
+  16601: {
     address: '0x26efCdC7adA14EcAf755557cc62f4FD7757586CC',
     symbol: 'A0GI',
     name: 'A0GI',
@@ -88,7 +88,7 @@ export const SLCToken: Token = {
   address: ZERITHIUM_SWAP_CONTRACT.slc.address,
   symbol: 'xUSD',
   decimals: 18,
-  chainId: 16600,
+  chainId: 16601,
   // chainId: 71,
   name: 'X Libra USD',
   icon: 'https://espacemainnetapi.zerithium.io/coin/xUSD.png',
