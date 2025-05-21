@@ -4,6 +4,7 @@
   .flex-center-between {
     @apply flex items-center justify-between;
   }
+
   .flex-center {
     @apply flex items-center justify-center;
   }
@@ -11,7 +12,40 @@
   .flex-row-end {
     @apply flex items-end justify-center;
   }
+
   .flex-around {
-    @apply flex items-center  justify-around;
+    @apply flex items-center justify-around;
+  }
+
+  .glow-effect {}
+
+  .glow {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5d49fe;
+    /* Base color of the glowing dot */
+    box-shadow: #5d49fe;
+    /* Glowing effect */
+    animation: pulse 2s infinite;
+    /* Pulse animation */
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.5);
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }

@@ -1,9 +1,10 @@
 import useProvider from '@/hooks/useProvider.ts';
 import { Contract } from 'ethers';
 import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
-
+import { JsonRpcProvider } from 'ethers';
 const useSLCContract = () => {
-  const provider = useProvider();
+  const { rpc } = useProvider();
+  const provider = new JsonRpcProvider(rpc);
 
   const { address, abi } = ZERITHIUM_SLC_CONTRACT.interface;
 

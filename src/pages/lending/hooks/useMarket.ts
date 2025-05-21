@@ -31,7 +31,7 @@ const useMarket = () => {
   });
 
   useEffect(() => {
-    getAssets({ pageSize: 20, pageNum: 1 });
+    getAssets();
   }, []);
 
   const { data: userAssets, isLoading } = useReadContract({

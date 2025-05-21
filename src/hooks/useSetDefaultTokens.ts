@@ -1,7 +1,7 @@
 import { Token } from '@/types/swap';
 import { useSearchParams } from 'react-router-dom';
 import useErc20Info from './useERC20TokenInfo';
-import useTokenListStore from '@/store/tokens';
+import useTokenStore from '@/store/tokens';
 import { useEffect, useState } from 'react';
 import { Address, isAddress } from 'viem';
 
@@ -9,7 +9,7 @@ const useSetDefaultTokens = (
   names: string[],
   update: (tokens: Token[]) => void
 ) => {
-  const tokens = useTokenListStore((state) => state.tokens);
+  const tokens = useTokenStore((state) => state.tokens);
 
   const [loading, setLoading] = useState(false);
 

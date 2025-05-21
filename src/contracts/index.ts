@@ -12,7 +12,7 @@ export const ZERITHIUM_LENDING_CONTRACT: Record<
   { address: Address; abi: InterfaceAbi | Abi | any }
 > = {
   interface: {
-    address: '0x7e6276A95faC0744Cf9569b55E629e80bA6E3eAF',
+    address: '0xb4ff8cBc8DECDD89cbDC5B9EB6C521e0cA063dAF',
     abi: LendingInterfaceABI,
   },
 };
@@ -30,9 +30,8 @@ export const ZERITHIUM_SWAP_CONTRACT: Record<
     address: '0xF65050e2AC003569a4b18E612B86CC833afE5960',
     abi: erc20Abi,
   },
-  // main
   usdt: {
-    address: '0xfe97e85d13abd9c1c33384e796f10b73905637ce',
+    address: '0x3ec8a8705be1d5ca90066b37ba62c4183b024ebf',
     abi: erc20Abi,
   },
   // main
@@ -57,26 +56,20 @@ export const ZERITHIUM_SLC_CONTRACT: Record<
     abi: SLCInterfaceABI,
   },
   oracle: {
-    address: '0x3fE74abD8ED3A646d37Fac94F5c2bf37bcdb63f5',
+    address: '0xFf87E6e1148dC65E534e0f2AfbE5F4f0c2cbF6E5',
     abi: iSlcOracleABI,
   },
   mutilCall: {
-    address: '0x17e26B882B5C3affDF427607122C79C46eb42B11',
+    address: '0xae5D6ff83D7B7DAfce396Df63189A6eC03b306F5',
     abi: Multicallespacetestnet,
   },
 };
 
 export const NATIVE_ERC20_TOKEN: Record<string, Token> = {
-  71: {
-    address: '0x26efCdC7adA14EcAf755557cc62f4FD7757586CC',
-    symbol: 'WXCFX',
-    name: 'WXCFX',
-    decimals: 18,
-  },
   16600: {
     address: '0x26efCdC7adA14EcAf755557cc62f4FD7757586CC',
-    symbol: 'CFX',
-    name: 'CFX',
+    symbol: 'A0GI',
+    name: 'A0GI',
     decimals: 18,
   },
 };

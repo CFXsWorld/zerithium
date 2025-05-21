@@ -21,6 +21,7 @@ import zhHK from 'antd/locale/zh_HK';
 import enUS from 'antd/locale/en_US';
 import zeroGIcon from '@/assets/images/zero.png';
 import ChainBlockHeight from './components/ChainBlockHeight';
+import TokenProvider from '@/components/TokenProvider';
 
 import { ConnectKitProvider } from 'connectkit';
 
@@ -103,12 +104,14 @@ const Dapp = ({ children, locale }: PropsWithChildren<{ locale: Locale }>) => {
       <QueryClientProvider client={queryClient}>
         <ConnectKitProvider mode={isDark ? 'dark' : 'light'}>
           <TXPendingProvider>
-            <ConnectModal />
-            <SubmittedModal />
-            <WalletDetailModal />
-            {children}
-            <div className="w-full max-md:h-[100px] md:h-[50px]" />
-            <ChainBlockHeight />
+            <TokenProvider>
+              <ConnectModal />
+              <SubmittedModal />
+              <WalletDetailModal />
+              {children}
+              <div className="w-full max-md:h-[100px] md:h-[50px]" />
+              <ChainBlockHeight />
+            </TokenProvider>
           </TXPendingProvider>
         </ConnectKitProvider>
       </QueryClientProvider>
@@ -116,7 +119,7 @@ const Dapp = ({ children, locale }: PropsWithChildren<{ locale: Locale }>) => {
   );
 };
 
-const Providers = () => {
+const App = () => {
   const { locale, messages } = useLocale();
 
   return (
@@ -138,4 +141,4 @@ const Providers = () => {
     </WagmiProvider>
   );
 };
-export default Providers;
+export default App;

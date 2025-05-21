@@ -1,7 +1,7 @@
 import { Contract, InterfaceAbi } from 'ethers';
 import { ZERITHIUM_SLC_CONTRACT } from '@/contracts';
 import useProvider from '@/hooks/useProvider.ts';
-
+import { JsonRpcProvider } from 'ethers';
 export interface ContractCall {
   abi: InterfaceAbi;
   address: string;
@@ -12,7 +12,8 @@ export interface ContractCall {
 const useTryMulticall = () => {
   const { address, abi } = ZERITHIUM_SLC_CONTRACT.mutilCall;
 
-  const provider = useProvider();
+  const { rpc } = useProvider();
+  const provider = new JsonRpcProvider(rpc);
 
   const multicallContract = new Contract(address, abi, provider);
 

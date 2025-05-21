@@ -19,10 +19,10 @@ const Nav = () => {
     },
     {
       name: 'Rewards',
-      // name: t('common.nav.lending.dashboard'),
       path: '/rewards',
       mather: (pathname: string) => pathname.includes('/rewards'),
       icon: <GitIcon />,
+      disabled: true,
     },
   ];
 
@@ -37,12 +37,13 @@ const Nav = () => {
         {menus.map((child) => (
           <Link
             key={child.path}
-            to={child.path}
+            to={child.disabled ? '#' : child.path}
             className={cn(
               ' px-[12px] text-[16px]  font-bold text-tc-secondary max-md:px-[8px] max-md:text-[14px] ',
               {
                 'text-[16px] font-bold text-tc-primary ':
-                  child.mather(pathname),
+                  child.mather(pathname) && !child.disabled,
+                'cursor-not-allowed opacity-50': child.disabled,
               }
             )}
           >

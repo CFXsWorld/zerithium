@@ -13,7 +13,7 @@ const TokenList = ({
 }) => {
   if (loading) {
     return (
-      <div className="w-full">
+      <div className="flex w-full flex-col gap-[15px]">
         <Skeleton active />
         <Skeleton active />
       </div>

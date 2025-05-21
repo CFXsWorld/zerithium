@@ -3,7 +3,7 @@ import { erc20Abi } from 'viem';
 import { useAccount } from 'wagmi';
 import useProvider from '@/hooks/useProvider.ts';
 import useNativeToken from './useNativeToken';
-
+import { JsonRpcProvider } from 'ethers';
 export function formatNumber(number: number, decimals: number) {
   const factor = Math.pow(10, decimals);
   return Math.floor(number * factor) / factor;
@@ -11,7 +11,8 @@ export function formatNumber(number: number, decimals: number) {
 
 const useErc20Balance = () => {
   const { address: account } = useAccount();
-  const provider = useProvider();
+  const { rpc } = useProvider();
+  const provider = new JsonRpcProvider(rpc);
   const { isNativeToken } = useNativeToken();
   const getBalance = async (address: string, fixed = 7) => {
     if (!account) return 0;

@@ -38,7 +38,7 @@ const useTokensWithPrice = () => {
   }, [address]);
 
   useEffect(() => {
-    if (tokenData && tokenData.items?.length && address) {
+    if (tokenData?.items?.length && address) {
       setLoading(true);
       const calls: ContractCall[] = tokenData.items?.map((token) => ({
         name: 'getPrice',
@@ -61,7 +61,6 @@ const useTokensWithPrice = () => {
               const unitPrice = Number(
                 formatUnits(allUnitPrice.returnData[index])
               );
-              const amount = Number(formatUnits(allBalance.returnData[index]));
               if (isNativeToken(item)) {
                 const balance = await getNativeTokenBalance();
                 newData.push({
@@ -70,6 +69,9 @@ const useTokensWithPrice = () => {
                   price: formatNumber(balance * unitPrice, 6),
                 });
               } else {
+                const amount = Number(
+                  formatUnits(allBalance.returnData[index])
+                );
                 newData.push({
                   ...item,
                   amount: formatNumber(amount, 6),
@@ -84,7 +86,7 @@ const useTokensWithPrice = () => {
           setLoading(false);
         });
     }
-  }, [tokenData, address]);
+  }, [tokenData?.items?.length, address]);
 
   const getTokensList = (params: any) => {
     getTokens(params).then(async (res) => {

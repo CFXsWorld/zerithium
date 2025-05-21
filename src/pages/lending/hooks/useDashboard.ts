@@ -33,26 +33,8 @@ const useDashboard = () => {
   });
 
   useEffect(() => {
-    getAssets({ pageSize: 20, pageNum: 1 });
+    getAssets();
   }, []);
-
-  // const { data: homogeneousFloorOfHealthFactor } = useReadContract({
-  //   address: ZERITHIUM_LENDING_CONTRACT.interface.address as Address,
-  //   abi: ZERITHIUM_LENDING_CONTRACT.interface.abi,
-  //   functionName: 'homogeneousFloorOfHealthFactor',
-  //   query: {
-  //     enabled: !!address,
-  //   },
-  // });
-
-  // const { data: nomalFloorOfHealthFactor } = useReadContract({
-  //   address: ZERITHIUM_LENDING_CONTRACT.interface.address as Address,
-  //   abi: ZERITHIUM_LENDING_CONTRACT.interface.abi,
-  //   functionName: 'nomalFloorOfHealthFactor',
-  //   query: {
-  //     enabled: !!address,
-  //   },
-  // });
 
   const { data: userMode, refetch: refetchUserMode } = useReadContract({
     address: ZERITHIUM_LENDING_CONTRACT.interface.address as Address,
@@ -109,6 +91,7 @@ const useDashboard = () => {
   useEffect(() => {
     if (userAssets && data?.items?.length && address && userMode) {
       setLoading(true);
+      console.log(userAssets, 'userAssets');
       const tokens = (userAssets as string[][])[0];
       const depositAmounts = (userAssets as bigint[][])[1];
       const lendingAmounts = (userAssets as bigint[][])[2];

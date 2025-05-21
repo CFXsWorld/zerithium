@@ -42,7 +42,7 @@ const useMarketDetail = () => {
 
   useEffect(() => {
     if (isAddress(tokenAddress as Address)) {
-      getAssets({ pageSize: 20, pageNum: 1 });
+      getAssets();
       getAssetsInterest({
         token: getRealAddress({ address: tokenAddress } as Token),
       });
@@ -195,7 +195,7 @@ const useMarketDetail = () => {
 
   const refresh = () => {
     if (isAddress(tokenAddress as Address)) {
-      getAssets({ pageSize: 20, pageNum: 1 });
+      getAssets();
       getAssetsInterest({
         token: getRealAddress({ address: tokenAddress } as Token),
       });

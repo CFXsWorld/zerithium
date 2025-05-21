@@ -3,6 +3,7 @@ import { CSSProperties, HTMLAttributes, PropsWithChildren } from 'react';
 import AntdIcon from '@ant-design/icons';
 import ETH from '@/assets/svgs/tokens/ETH-Ethereum.svg?react';
 import BTC from '@/assets/svgs/tokens/BTC.svg?react';
+import USDT from '@/assets/svgs/tokens/USDT.svg?react';
 
 type IconProps = PropsWithChildren<
   {
@@ -28,5 +29,11 @@ export const ETHIcon = (props: IconProps) => (
 export const BTCIcon = (props: IconProps) => (
   <Icon {...props}>
     <BTC />
+  </Icon>
+);
+
+export const USDTIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <USDT />
   </Icon>
 );
